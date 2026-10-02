@@ -2,8 +2,7 @@
 weight: 3
 bookFlatSection: true
 bookComments: false
-title: "ᴄᴀᴛᴇɢᴏʀɪᴇs"
+title: "ᴅᴇᴇᴘ ʟᴇᴀʀɴɪɴɢ"
 bookHidden: false
-blogLock: false
 ---
 
