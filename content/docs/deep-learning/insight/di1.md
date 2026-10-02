@@ -5,6 +5,7 @@ categories: ['machine-learning']
 bookHidden: true
 title: "머신러닝"
 bookComments: true
+index: 1
 ---
 
 # 머신러닝
