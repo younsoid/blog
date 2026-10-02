@@ -1,7 +1,7 @@
 ---
 date : 2026-07-30
 tags: ['2026-07']
-categories: ['machine-learning']
+categories: ['machinelearning']
 bookHidden: true
 title: "머신러닝"
 bookComments: true

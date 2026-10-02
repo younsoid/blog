@@ -1,7 +1,7 @@
 ---
 date : 2026-07-31
 tags: ['2026-07']
-categories: ['deep-learning']
+categories: ['deeplearning']
 bookHidden: true
 title: "딥러닝의 기하학적해석"
 bookComments: true

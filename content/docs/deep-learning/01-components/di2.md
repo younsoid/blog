@@ -1,7 +1,7 @@
 ---
 date : 2026-07-30
 tags: ['2026-07']
-categories: ['deep-learning']
+categories: ['deeplearning']
 bookHidden: true
 title: "딥러닝"
 bookComments: true
