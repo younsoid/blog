@@ -4,6 +4,7 @@ tags: ['2025-04']
 categories: ['rsubread', 'edger']
 bookHidden: true
 title: "RNA-seq 전처리 (Rsubread, edgeR)"
+bookComments: true
 ---
 
 # RNA-seq 전처리 (Rsubread, edgeR)

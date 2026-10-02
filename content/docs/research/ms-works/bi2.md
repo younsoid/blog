@@ -4,6 +4,7 @@ tags: ['2025-04']
 categories: ['sleuth']
 bookHidden: true
 title: "Sleuth 작업 (DEG 분석)"
+bookComments: true
 ---
 
 # Sleuth 작업 (DEG 분석)

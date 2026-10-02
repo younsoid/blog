@@ -4,6 +4,7 @@ tags: ['2025-04']
 categories: ['tophat', 'rsubread']
 bookHidden: true
 title: "RNA-seq 전처리 파이프라인 비교"
+bookComments: true
 ---
 
 # RNA-seq 전처리 파이프라인 비교

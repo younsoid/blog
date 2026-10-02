@@ -4,6 +4,7 @@ tags: ['2025-04']
 categories: ['kallisto']
 bookHidden: true
 title: "Kallisto Pseudoalignment 작업"
+bookComments: true
 ---
 
 # Kallisto Pseudoalignment 작업

@@ -4,6 +4,7 @@ tags: ['2025-04']
 categories: ['trimmomatic', 'samtools']
 bookHidden: true
 title: "ChIP-seq 전처리 (trimmomatic, samtools)"
+bookComments: true
 ---
 
 # ChIP-seq 전처리 (trimmomatic, samtools)

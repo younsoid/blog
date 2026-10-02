@@ -4,6 +4,7 @@ tags: ['2025-04']
 categories: ['gprofiler','ggplot2']
 bookHidden: true
 title: "Enrichment 분석 및 시각화 (gProfiler/ggplot2)"
+bookComments: true
 ---
 
 # Enrichment 분석 및 시각화 (gProfiler/ggplot2)

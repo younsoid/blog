@@ -4,6 +4,7 @@ tags: ['2025-04']
 categories: ['tophat', 'samtools', 'htseq']
 bookHidden: true
 title: "RNA-seq 전처리 (TopHat, SAMtools, HTSeq)"
+bookComments: true
 ---
 
 # RNA-seq 전처리 (TopHat, SAMtools, HTSeq)

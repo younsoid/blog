@@ -4,6 +4,7 @@ tags: ['2025-04']
 categories: ['bismark']
 bookHidden: true
 title: "WGBS 전처리 (Bismark)"
+bookComments: true
 ---
 
 # WGBS 전처리 (Bismark)

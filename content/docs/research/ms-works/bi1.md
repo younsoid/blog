@@ -4,6 +4,7 @@ tags: ['2024-12']
 categories: ['deseq2']
 bookHidden: true
 title: "DE 분석 (DESeq2)"
+bookComments: true
 ---
 
 # DE 분석 (DESeq2)
