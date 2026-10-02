@@ -26,12 +26,14 @@
       {{- end -}}
       {{- $sortedTags = sort $sortedTags "count" "desc" -}}
 
+      {{- if not $.Params.tagHidden }}
       <div id="tag-badges" style="margin: 0.3rem 0 0.5rem 0;">
         <span data-cat="" onclick="filterByCategory(null)" style="font-size: 0.8rem; color: #aaa; margin-right: 0.6rem; cursor: pointer;">#전체 ({{ len $pages }})</span>
         {{- range $sortedTags }}
         <span data-cat="{{ .name }}" onclick="filterByCategory('{{ .name }}')" style="font-size: 0.8rem; color: #aaa; margin-right: 0.6rem; cursor: pointer;">#{{ .name }} ({{ .count }})</span>
         {{- end }}
       </div>
+      {{- end }}
 
       <p id="active-filter" style="display:none; font-size:0.8rem; color:#999; margin-bottom:0.5rem;" data-current=""></p>
 
