@@ -35,7 +35,7 @@
     <p id="active-filter" style="display:none; font-size:0.8rem; color:#999; margin-bottom:0.5rem;" data-current=""></p>
 
     {{- range $pages }}
-      {{- $cats := delimit .Params.categories "|" -}}
+      {{- $cats := delimit (.Params.categories | default slice) "|" -}}
       {{- $content := .RawContent -}}
       {{- $content = replaceRE `(?s)^.*?---\s*\n+` "" $content -}}
       {{- $content = replaceRE "(?s)```.*?```" "" $content -}}
