@@ -8,6 +8,8 @@ tagHidden: true
 
 #
 
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/c864a60f-8d62-42fa-bc30-9a79319a09e9" />
+
 ### ᴀʙᴏᴜᴛ ᴍᴇ
 
 - ~2023.08 ⋯ 경북대학교 자연과학대학 생명공학전공 학사 졸업
