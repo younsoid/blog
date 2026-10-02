@@ -1,8 +1,8 @@
 ---
-weight: 1
+weight: 10
 bookFlatSection: true
 bookComments: false
-title: "ᴀʙᴏᴜᴛ"
+title: "ᴀʙᴏᴜᴛ ᴍᴇ"
 ---
 
 ### ᴀʙᴏᴜᴛ ᴍᴇ
