@@ -1,11 +1,11 @@
 ---
 weight: 5
-title: "𝗌𝗍𝖺𝗍𝗂𝗌𝗍𝗂𝖼𝗌"
+title: "𝖽𝖺𝗍𝖺 𝗌𝖼𝗂𝖾𝗇𝖼𝖾"
 bookComments: false
 type: docs
 bookHidden: false
 ---
 
-# 𝗌𝗍𝖺𝗍𝗂𝗌𝗍𝗂𝖼𝗌
+# 𝖽𝖺𝗍𝖺 𝗌𝖼𝗂𝖾𝗇𝖼𝖾
 
 ---
