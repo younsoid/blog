@@ -5,6 +5,7 @@ categories: ['hugo']
 bookHidden: true
 title: "Hugo #3 블로그 scss 커스텀하기 (visited 링크 글자색 수정)"
 bookComments: true
+index: 3
 ---
 
 # Hugo #3 Hugo 블로그 scss 커스텀하기 (visited 링크 글자색 수정)
