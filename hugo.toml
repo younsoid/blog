@@ -1,6 +1,6 @@
 baseURL = 'https://younsoid.github.io/'
 locale = 'en-us'
-title = ' '
+title = 'ʀᴇꜱᴇᴀʀᴄʜ ɴᴏᴛᴇ'
 theme = 'book'
 
 [pagination]
