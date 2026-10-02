@@ -1,7 +1,7 @@
 ---
 date : 2025-04-21
 tags: ['2025-04']
-categories: ['rna-seq']
+categories: ['tophat', 'rsubread']
 bookHidden: true
 title: "RNA-seq 전처리 파이프라인 비교"
 ---
