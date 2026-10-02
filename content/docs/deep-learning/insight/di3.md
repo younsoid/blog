@@ -1,7 +1,7 @@
 ---
 date : 2026-07-30
 tags: ['2026-07']
-categories: ['back-propagation']
+categories: ['backpropagation']
 bookHidden: true
 title: "역전파 알고리즘"
 bookComments: true
