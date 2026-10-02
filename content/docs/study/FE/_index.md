@@ -1,6 +1,6 @@
 ---
 weight: 4
-title: "FE"
+title: "프론트엔드"
 bookComments: false
 type: docs
 ---
