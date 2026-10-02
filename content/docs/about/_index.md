@@ -19,7 +19,7 @@ tagHidden: true
 
 ### ᴘᴜʙʟɪᴄᴀᴛɪᴏɴꜱ
 
-- [Identification of severity related mutation hotspots in SARS-CoV-2 using a density-based clustering approach (BMC BioData Mining 2025)](https://link.springer.com/article/10.1186/s13040-025-00476-3)
-- [Disease progression associated cytokines in COVID-19 patients with deteriorating and recovering health conditions (Scientific Reports 2024)](https://www.nature.com/articles/s41598-024-75924-x)
-- [Dihydrotestosterone-androgen receptor signaling suppresses EBV-positive gastric cancer through DNA demethylation-mediated viral reactivation (Gastric Cancer 2025)](https://link.springer.com/article/10.1007/s10120-025-01626-6)
-- [Dihydrotestosterone Enhances MICA-Mediated Immune Responses to Epstein–Barr Virus-Associated Gastric Carcinoma (Cancers 2024)](https://www.mdpi.com/2072-6694/16/18/3219)
+- Identification of severity related mutation hotspots in SARS-CoV-2 using a density-based clustering approach [(BMC BioData Mining 2025)](https://link.springer.com/article/10.1186/s13040-025-00476-3)
+- Disease progression associated cytokines in COVID-19 patients with deteriorating and recovering health conditions [(Scientific Reports 2024)](https://www.nature.com/articles/s41598-024-75924-x)
+- Dihydrotestosterone-androgen receptor signaling suppresses EBV-positive gastric cancer through DNA demethylation-mediated viral reactivation [(Gastric Cancer 2025)](https://link.springer.com/article/10.1007/s10120-025-01626-6)
+- Dihydrotestosterone Enhances MICA-Mediated Immune Responses to Epstein–Barr Virus-Associated Gastric Carcinoma [(Cancers 2024)](https://www.mdpi.com/2072-6694/16/18/3219)
