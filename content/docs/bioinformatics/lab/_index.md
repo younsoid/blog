@@ -1,10 +1,10 @@
 ---
 weight: 3
-title: "Bioinformatics"
+title: "lab"
 bookComments: false
 type: docs
 ---
 
-# Bioinformatics
+# Lab
 
 ---
