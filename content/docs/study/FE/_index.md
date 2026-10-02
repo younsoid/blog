@@ -1,10 +1,10 @@
 ---
 weight: 4
-title: "frontend"
+title: "𝖿𝗋𝗈𝗇𝗍𝖾𝗇𝖽"
 bookComments: false
 type: docs
 ---
 
-# frontend
+# 𝖿𝗋𝗈𝗇𝗍𝖾𝗇𝖽
 
 ---
