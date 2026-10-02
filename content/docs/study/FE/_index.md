@@ -5,6 +5,6 @@ bookComments: false
 type: docs
 ---
 
-# Frontend
+# 프론트엔드
 
 ---
