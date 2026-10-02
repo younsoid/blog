@@ -5,6 +5,7 @@ categories: ['hugo']
 bookHidden: true
 title: "Hugo #2 Favicon 변경, Giscus 댓글창 추가"
 bookComments: true
+index: 2
 ---
 
 # Hugo #2 Favicon 변경, Giscus 댓글창 추가
