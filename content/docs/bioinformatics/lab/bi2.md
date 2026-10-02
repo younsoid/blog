@@ -1,12 +1,12 @@
 ---
 date : 2025-04-21
 tags: ['2025-04']
-categories: ['deg','sleuth']
+categories: ['sleuth']
 bookHidden: true
-title: "Sleuth 작업"
+title: "Sleuth 작업 (DEG 분석)"
 ---
 
-# Sleuth 작업
+# Sleuth 작업 (DEG 분석)
 
 #2025-04-21
 
