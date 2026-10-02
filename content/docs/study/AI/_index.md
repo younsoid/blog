@@ -1,11 +1,11 @@
 ---
 weight: 2
-title: "statistics"
+title: "𝗌𝗍𝖺𝗍𝗂𝗌𝗍𝗂𝖼𝗌"
 bookComments: false
 type: docs
 bookHidden: false
 ---
 
-# statistics
+# 𝗌𝗍𝖺𝗍𝗂𝗌𝗍𝗂𝖼𝗌
 
 ---
