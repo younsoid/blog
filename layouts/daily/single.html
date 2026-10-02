@@ -1,0 +1,72 @@
+{{ define "main" }}
+  {{ if .Params.pageLocked }}
+    <div id="password-form" style="max-width: 400px; margin: 50px auto; text-align: center;">
+      <p style="margin-bottom: 10px; color: #333; font-size: 14px;">Password:
+        <input type="password" id="password-input"
+               style="border: none; border-bottom: 1px solid #ccc; outline: none; padding: 5px; font-size: 14px; width: 200px; margin-left: 5px;">
+      </p>
+      <div id="error-message" style="color: #d32f2f; margin-top: 10px; display: none; font-size: 12px;">비밀번호가 올바르지 않습니다.</div>
+    </div>
+
+    <article id="protected-article" class="markdown book-article" style="display: none;">
+      {{- .Content -}}
+    </article>
+
+    <script>
+      const correctPassword = '010116';
+
+      function checkPassword() {
+        const input = document.getElementById('password-input');
+        const errorMessage = document.getElementById('error-message');
+
+        if (input.value === correctPassword) {
+          sessionStorage.setItem('pageAuth_{{ .RelPermalink }}', 'true');
+          showContent();
+        } else {
+          errorMessage.style.display = 'block';
+          input.value = '';
+          input.focus();
+        }
+      }
+
+      function showContent() {
+        document.getElementById('password-form').style.display = 'none';
+        document.getElementById('protected-article').style.display = 'block';
+        const comments = document.getElementById('page-comments');
+        if (comments) comments.style.display = 'block';
+      }
+
+      if (sessionStorage.getItem('pageAuth_{{ .RelPermalink }}') === 'true') {
+        showContent();
+      } else {
+        document.getElementById('password-input').focus();
+      }
+
+      document.getElementById('password-input').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+          checkPassword();
+        }
+      });
+    </script>
+  {{ else }}
+    <article class="markdown book-article">
+      {{- .Content -}}
+    </article>
+  {{ end }}
+{{ end }}
+
+{{ define "comments" }}
+  {{ if .Params.pageLocked }}
+    <div id="page-comments" style="display: none;">
+      <div class="book-comments">
+        {{- partial "docs/comments" . -}}
+      </div>
+    </div>
+  {{ else }}
+    {{ if and .Content (default true (default .Site.Params.BookComments .Params.BookComments)) }}
+    <div class="book-comments">
+      {{- partial "docs/comments" . -}}
+    </div>
+    {{ end }}
+  {{ end }}
+{{ end }}

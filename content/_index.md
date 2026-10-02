@@ -1,7 +1,6 @@
 ---
-title: "Home"
+title: "윤소의 블로그 (๑˘ ᵕ˘๑)"
+type: docs
+bookComments: false
 ---
 
-# 환영합니다
-
-첫 블로그입니다.

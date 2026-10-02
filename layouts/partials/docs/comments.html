@@ -1,0 +1,61 @@
+<script src="https://giscus.app/client.js"
+        data-repo="yshghid/yshghid.github.io"
+        data-repo-id="R_kgDONkMkNg"
+        data-category-id="DIC_kwDONkMkNs4CloJh"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="ko"
+        crossorigin="anonymous"
+        async>
+</script>
+
+{{- if .IsPage -}}
+  {{- $others := where .CurrentSection.RegularPages ".Params.pageHidden" "ne" true -}}
+  {{- $others = where $others ".Permalink" "ne" .Permalink -}}
+  {{- if $others -}}
+  <div style="margin-top: 5rem;">
+    <p style="font-size: 0.8rem; color: #aaa; margin-bottom: 0.8rem;">이 카테고리의 다른 글</p>
+    <div class="related-grid">
+      {{- range first 4 ($others.ByDate.Reverse) -}}
+        {{- $firstImg := "" -}}
+        {{- $mdMatch := findRE `!\[[^\]]*\]\(([^)]+)\)` .RawContent 1 -}}
+        {{- $htmlMatch := findRE `<img[^>]*src="([^"]+)"[^>]*/?>` .RawContent 1 -}}
+        {{- if $mdMatch -}}
+          {{- $firstImg = replaceRE `!\[[^\]]*\]\(([^)]+)\)` "$1" (index $mdMatch 0) -}}
+        {{- else if $htmlMatch -}}
+          {{- $firstImg = replaceRE `<img[^>]*src="([^"]+)"[^>]*/?>` "$1" (index $htmlMatch 0) -}}
+        {{- end -}}
+
+        {{- $content := .RawContent -}}
+        {{- $content = replaceRE `(?s)^.*?---\s*\n+` "" $content -}}
+        {{- $content = replaceRE "(?s)```.*?```" "" $content -}}
+        {{- $content = replaceRE `!\[.*?\]\(.*?\)` "" $content -}}
+        {{- $content = replaceRE `<img[^>]*>` "" $content -}}
+        {{- $content = replaceRE `\[([^\]]+)\]\([^\)]+\)` "$1" $content -}}
+        {{- $content = replaceRE `(?m)^#+\s*` "" $content -}}
+        {{- $content = replaceRE `#\S+` "" $content -}}
+        {{- $content = replaceRE `\n\n+` " " $content -}}
+        {{- $cleanContent := trim ($content | plainify) " \t\n\r" -}}
+
+        <a href="{{ .RelPermalink }}" class="home-grid-item{{ if not $firstImg }} no-img{{ end }}">
+          <div class="home-grid-inner">
+            {{- if $firstImg -}}
+            <img src="{{ $firstImg }}" loading="lazy">
+            {{- end -}}
+          </div>
+          <div class="home-grid-overlay">
+            {{- if .Params.categories -}}
+            <div class="home-grid-cat">{{ range .Params.categories }}#{{ . }} {{ end }}</div>
+            {{- end -}}
+            <div class="home-grid-ttl">{{ .Title }}</div>
+          </div>
+        </a>
+      {{- end -}}
+    </div>
+  </div>
+  {{- end -}}
+{{- end -}}

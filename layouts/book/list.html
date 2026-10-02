@@ -1,0 +1,225 @@
+{{ define "main" }}
+  <article class="markdown book-article">
+    {{ .Content }}
+
+    <div id="lock-gate" style="text-align:center; padding:3rem 0;">
+      <input type="password" id="lock-pw"
+        style="border:1px solid #ddd; border-radius:4px; padding:0.5rem 1rem; font-size:0.9rem; outline:none; text-align:center;"
+        onkeydown="if(event.key==='Enter') checkLock()">
+      <br><br>
+      <button onclick="checkLock()"
+        style="background:none; border:1px solid #ddd; border-radius:4px; padding:0.4rem 1.2rem; font-size:0.85rem; cursor:pointer; color:#666;">확인</button>
+      <p id="lock-error" style="color:#ff9090; font-size:0.8rem; margin-top:0.5rem; display:none;">비밀번호가 틀렸습니다</p>
+    </div>
+
+    <!-- Protected Content -->
+    <div id="protected-content" style="display: none;">
+
+      {{- $allRaw := where .RegularPages ".Params.pageHidden" "ne" true -}}
+      {{- $pages := slice -}}
+      {{- range $allRaw.ByDate.Reverse.GroupByDate "2006-01-02" -}}
+        {{- $withIdx := where .Pages ".Params.index" "ne" nil -}}
+        {{- $noIdx := where .Pages ".Params.index" "eq" nil -}}
+        {{- range (sort $withIdx "Params.index" "desc") -}}{{- $pages = $pages | append . -}}{{- end -}}
+        {{- range $noIdx.ByTitle -}}{{- $pages = $pages | append . -}}{{- end -}}
+      {{- end -}}
+
+      {{- $tagCounts := dict -}}
+      {{- range $pages -}}
+        {{- range .Params.categories -}}
+          {{- $cur := default 0 (index $tagCounts .) -}}
+          {{- $tagCounts = merge $tagCounts (dict . (add $cur 1)) -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $sortedTags := slice -}}
+      {{- range $name, $count := $tagCounts -}}
+        {{- $sortedTags = $sortedTags | append (dict "name" $name "count" $count) -}}
+      {{- end -}}
+      {{- $sortedTags = sort $sortedTags "count" "desc" -}}
+
+      <div id="tag-badges" style="margin: 0.3rem 0 0.5rem 0;">
+        <span data-cat="" onclick="filterByCategory(null)" style="font-size: 0.8rem; color: #aaa; margin-right: 0.6rem; cursor: pointer;">#전체 ({{ len $pages }})</span>
+        {{- range $sortedTags }}
+        <span data-cat="{{ .name }}" onclick="filterByCategory('{{ .name }}')" style="font-size: 0.8rem; color: #aaa; margin-right: 0.6rem; cursor: pointer;">#{{ .name }} ({{ .count }})</span>
+        {{- end }}
+      </div>
+
+      <p id="active-filter" style="display:none; font-size:0.8rem; color:#999; margin-bottom:0.5rem;" data-current=""></p>
+
+      {{- range $pages }}
+        {{- $cats := delimit .Params.categories "|" -}}
+        {{- $content := .RawContent -}}
+        {{- $content = replaceRE `(?s)^.*?---\s*\n+` "" $content -}}
+        {{- $content = replaceRE "(?s)```.*?```" "" $content -}}
+        {{- $content = replaceRE `!\[.*?\]\(.*?\)` "" $content -}}
+        {{- $content = replaceRE `<img[^>]*>` "" $content -}}
+        {{- $content = replaceRE `\[([^\]]+)\]\([^\)]+\)` "$1" $content -}}
+        {{- $content = replaceRE `(?m)^#+\s*` "" $content -}}
+        {{- $content = replaceRE `#\S+` "" $content -}}
+        {{- $content = replaceRE `(?m)^\d+\s+` "" $content -}}
+        {{- $content = replaceRE `\n\n+` " " $content -}}
+        {{- $cleanContent := trim ($content | plainify) " \t\n\r" -}}
+
+        {{- $firstImg := "" -}}
+        {{- $mdImgMatch := findRE `!\[[^\]]*\]\(([^)]+)\)` .RawContent 1 -}}
+        {{- $htmlImgMatch := findRE `<img[^>]*src="([^"]+)"[^>]*/?>` .RawContent 1 -}}
+        {{- if $mdImgMatch -}}
+          {{- $firstImg = replaceRE `!\[[^\]]*\]\(([^)]+)\)` "$1" (index $mdImgMatch 0) -}}
+        {{- else if $htmlImgMatch -}}
+          {{- $firstImg = replaceRE `<img[^>]*src="([^"]+)"[^>]*/?>` "$1" (index $htmlImgMatch 0) -}}
+        {{- end -}}
+
+        <div class="post-item" data-categories="{{ $cats }}" style="display:none;">
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="flex: 1; min-width: 0;">
+              {{- if $cleanContent -}}
+                <p><em>{{ .Date.Format "2006-01-02" }}</em> ⋯ {{ .Title }}</p>
+                <p style="height: 4.5em; overflow: hidden;">
+                  <a href="{{ .RelPermalink }}">{{ $cleanContent }}</a>
+                </p>
+              {{- else -}}
+                <p><em>{{ .Date.Format "2006-01-02" }}</em> ⋯ <a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+                <p style="height: 4.5em; overflow: hidden;"><br><br><br></p>
+              {{- end -}}
+              {{- if .Params.categories -}}
+              <p style="color: #999; font-size: 0.85em; margin: 0.3rem 0;">
+                {{- range .Params.categories }}#{{ . }} {{ end -}}
+              </p>
+              {{- end -}}
+            </div>
+            {{- if $firstImg -}}
+            <div class="post-thumb" style="flex: 0 0 130px; width: 130px; height: 130px; overflow: hidden; align-self: center;">
+              <img src="{{ $firstImg }}" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" loading="lazy">
+            </div>
+            {{- end -}}
+          </div>
+          <hr>
+        </div>
+      {{- end }}
+
+      <div id="js-pagination" style="margin-top: 2rem; display: none; justify-content: center; align-items: center; gap: 0.3rem;">
+        <a id="prev-btn" onclick="prevPage()" style="padding: 0.3rem 0.6rem; text-decoration: none; cursor: pointer; color: #aaa;">←</a>
+        <span id="page-numbers" style="display: flex; gap: 0.3rem;"></span>
+        <a id="next-btn" onclick="nextPage()" style="padding: 0.3rem 0.6rem; text-decoration: none; cursor: pointer; color: #aaa;">→</a>
+      </div>
+    </div>
+  </article>
+
+  <script>
+    const POSTS_PER_PAGE = 10;
+    let currentPage = 1;
+    let activeFilter = null;
+
+    function allItems() {
+      return Array.from(document.querySelectorAll('.post-item'));
+    }
+
+    function matchingItems() {
+      return allItems().filter(el =>
+        !activeFilter || (el.dataset.categories || '').split('|').includes(activeFilter)
+      );
+    }
+
+    function renderPage() {
+      const all = allItems();
+      const matched = matchingItems();
+      const pager = document.getElementById('js-pagination');
+
+      all.forEach(el => el.style.display = 'none');
+
+      const start = (currentPage - 1) * POSTS_PER_PAGE;
+      matched.slice(start, start + POSTS_PER_PAGE).forEach(el => el.style.display = '');
+      const total = Math.ceil(matched.length / POSTS_PER_PAGE);
+      if (pager) {
+        const nums = document.getElementById('page-numbers');
+        if (nums) {
+          nums.innerHTML = '';
+          for (let i = 1; i <= total; i++) {
+            const btn = document.createElement('a');
+            btn.textContent = i;
+            btn.onclick = () => goToPage(i);
+            btn.style.cssText = `padding: 0.3rem 0.5rem; cursor: pointer; text-decoration: none; color: ${i === currentPage ? '#333' : '#bbb'};`;
+            nums.appendChild(btn);
+          }
+        }
+        document.getElementById('prev-btn').style.visibility = currentPage > 1 ? 'visible' : 'hidden';
+        document.getElementById('next-btn').style.visibility = currentPage < total ? 'visible' : 'hidden';
+        pager.style.display = total > 1 ? 'flex' : 'none';
+      }
+    }
+
+    function updateURL() {
+      const params = new URLSearchParams();
+      if (activeFilter) params.set('cat', activeFilter);
+      if (currentPage > 1) params.set('page', currentPage);
+      const qs = params.toString();
+      history.replaceState(null, '', qs ? '?' + qs : window.location.pathname);
+    }
+
+    function goToPage(n) { currentPage = n; updateURL(); renderPage(); }
+    function prevPage() { if (currentPage > 1) goToPage(currentPage - 1); }
+    function nextPage() {
+      const total = Math.ceil(matchingItems().length / POSTS_PER_PAGE);
+      if (currentPage < total) goToPage(currentPage + 1);
+    }
+
+    function filterByCategory(cat) {
+      const filterEl = document.getElementById('active-filter');
+      const badges = document.querySelectorAll('#tag-badges span');
+      if (!cat || activeFilter === cat) {
+        activeFilter = null;
+        currentPage = 1;
+        if (filterEl) { filterEl.style.display = 'none'; filterEl.dataset.current = ''; }
+        badges.forEach(b => b.style.display = '');
+      } else {
+        activeFilter = cat;
+        currentPage = 1;
+        if (filterEl) { filterEl.style.display = 'none'; }
+        badges.forEach(b => b.style.display = b.dataset.cat === cat ? '' : 'none');
+      }
+      updateURL();
+      renderPage();
+    }
+
+    // 비밀번호 게이트
+    const LOCK_KEY = 'blog_lock_authed';
+    const LOCK_PW = '8976';
+
+    function checkLock() {
+      const input = document.getElementById('lock-pw');
+      if (input && input.value === LOCK_PW) {
+        localStorage.setItem(LOCK_KEY, 'yes');
+        document.getElementById('lock-gate').style.display = 'none';
+        document.getElementById('protected-content').style.display = '';
+      } else {
+        const err = document.getElementById('lock-error');
+        if (err) err.style.display = '';
+      }
+    }
+
+    const h1 = document.querySelector('.book-article h1');
+    const tagsEl = document.getElementById('tag-badges');
+    const filterEl = document.getElementById('active-filter');
+    if (h1 && tagsEl) h1.after(tagsEl);
+    if (tagsEl && filterEl) tagsEl.after(filterEl);
+    else if (h1 && filterEl) h1.after(filterEl);
+
+    // URL에서 상태 복원
+    const _p = new URLSearchParams(window.location.search);
+    const _cat = _p.get('cat');
+    if (_cat) {
+      activeFilter = _cat;
+      document.querySelectorAll('#tag-badges span').forEach(b => {
+        b.style.display = b.dataset.cat === _cat ? '' : 'none';
+      });
+    }
+    currentPage = parseInt(_p.get('page')) || 1;
+
+    if (localStorage.getItem(LOCK_KEY) === 'yes') {
+      document.getElementById('lock-gate').style.display = 'none';
+      document.getElementById('protected-content').style.display = '';
+    }
+
+    renderPage();
+  </script>
+{{ end }}

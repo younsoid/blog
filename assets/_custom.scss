@@ -1,0 +1,305 @@
+// custom.scss
+// Light 테마 정의
+@mixin theme-light {
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-500: #adb5bd;
+
+  --color-link: #6e6d6d;
+  --color-visited-link: #6e6d6d;
+
+  --body-background: white;
+  --body-font-color: black;
+
+  --icon-filter: none;
+
+  --hint-color-info: #6bf;
+  --hint-color-warning: #fd6;
+  --hint-color-danger: #f66;
+}
+
+// ===== 코드 창 스타일 =====
+.markdown {
+  // 인라인 코드
+  code {
+    direction: ltr;
+    unicode-bidi: embed;
+    padding: 0 $padding-4;
+    background: var(--gray-200);
+    border-radius: $border-radius;
+    font-size: 0.9em;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  // 코드 블록
+  pre {
+    direction: ltr;
+    unicode-bidi: embed;
+    padding: $padding-16;
+    background: var(--gray-100);
+    border-radius: $border-radius;
+    overflow-x: auto;
+
+    code {
+      padding: 0;
+      background: none;
+      font-size: 0.9em;
+      font-family: 'JetBrains Mono', monospace;
+    }
+  }
+}
+
+// ===== 표 스타일 =====
+.markdown table { 
+  font-size: 0.85em;
+  line-height: 1.5; 
+}
+
+.markdown table th,
+.markdown table td {
+  padding: 0.375rem 0.75rem;
+  line-height: 1.45;
+}
+
+.markdown table th {
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+// 코드 하이라이트 라인번호 테이블은 제외
+.markdown .chroma .lntable,
+.markdown .chroma .lntable th,
+.markdown .chroma .lntable td {
+  font-size: 1em !important;
+}
+
+/* ===== 모바일 전체 폰트 축소 ===== */
+@media screen and (max-width: $mobile-breakpoint) {
+  /* 전체 본문 */
+  html {
+    font-size: 14px !important;   /* 기본 16px → 14px */
+  }
+  body {
+    font-size: 0.9em !important;  /* 상대적으로도 살짝 줄임 */
+    line-height: 1.5;
+  }
+
+  /* 표 */
+  .markdown table {
+    font-size: 0.8em !important;
+  }
+  .markdown table th,
+  .markdown table td {
+    padding: 0.3rem 0.55rem !important;
+  }
+
+  /* 인라인 코드 */
+  .book-page .markdown code {
+    font-size: 0.75em !important;
+  }
+
+  /* 코드 블록 */
+  .book-page .markdown pre code {
+    font-size: 0.75em !important;
+  }
+}
+
+// ===== 목록 스타일 =====
+.markdown ul,
+.markdown ol {
+  padding-inline-start: 1.0em;
+  margin-left: 0;
+}
+
+.book-page .markdown li,
+.markdown li {
+  margin-bottom: 0.1em;
+}
+
+// ===== 형광펜 =====
+.markdown mark {
+  background-color: #fdffd6;
+  padding: 0.1em 0.2em;
+  border-radius: 1px;
+}
+
+.markdown .highlight-yellow { background-color: #fffcb5; padding: 0.1em 0.2em; border-radius: 1px; }
+.markdown .highlight-pink   { background-color: #ffebff; padding: 0.1em 0.2em; border-radius: 1px; }
+.markdown .highlight-green  { background-color: #deffdd; padding: 0.1em 0.2em; border-radius: 1px; }
+.markdown .highlight-blue   { background-color: #def0ff; padding: 0.1em 0.2em; border-radius: 1px; }
+.markdown .highlight-purple { background-color: #d7d6ff; padding: 0.1em 0.2em; border-radius: 1px; }
+
+// ===== gray 태그 =====
+.markdown gray {
+  color: #aaa;
+}
+
+.markdown grayblock {
+  display: block;
+  color: #aaa;
+}
+
+// ===== line 태그 =====
+.markdown line {
+  text-decoration: none;
+  box-shadow: inset 0 -1.5px 0 #ff9090;
+}
+
+// ===== 밑줄 =====
+.markdown .underline-red    { text-decoration: none; box-shadow: inset 0 -1.2px 0 #fc5353; }
+.markdown .underline-blue   { text-decoration: none; box-shadow: inset 0 -1.2px 0 #7370ff; }
+.markdown .underline-green  { text-decoration: none; box-shadow: inset 0 -1.2px 0 #067d10; }
+.markdown .underline-purple { text-decoration: none; box-shadow: inset 0 -1.2px 0 #b809ab; }
+
+// ===== 홈 그리드 =====
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.home-grid-item {
+  display: block;
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-grid-inner {
+  width: 100%;
+  height: 100%;
+  opacity: 0.82;
+  transition: opacity 0.25s;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
+
+.home-grid-item:hover .home-grid-inner {
+  opacity: 0.25;
+}
+
+.home-grid-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.2rem 1.2rem 1.2rem 0.9rem;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.home-grid-item:hover .home-grid-overlay,
+.home-grid-item.no-img .home-grid-overlay {
+  opacity: 1;
+}
+
+.home-grid-item.no-img {
+  background: #f5f5f5;
+}
+
+.home-grid-cat {
+  font-size: 0.72rem;
+  color: #999;
+  margin-bottom: 0.2rem;
+}
+
+.home-grid-ttl {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.4;
+}
+
+.home-grid-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.home-grid-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.home-grid-preview {
+  font-size: 0.78rem;
+  color: #888;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .home-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// ===== 관련 글 그리드 =====
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+}
+
+.related-grid .home-grid-inner {
+  opacity: 0.3;
+}
+
+.related-grid .home-grid-item:hover .home-grid-inner {
+  opacity: 0.15;
+}
+
+.related-grid .home-grid-overlay {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// ===== 포스트 썸네일 모바일 =====
+@media (max-width: 640px) {
+  .post-thumb {
+    flex: 0 0 80px !important;
+    width: 80px !important;
+    height: 80px !important;
+  }
+}
+
+// ===== 두 단 레이아웃 =====
+.two-cols {
+  column-count: 2;
+  column-gap: 2rem;
+}
+
+// ===== 홈 인덱스 섹션 항목 =====
+.home-index p > em:only-child {
+  color: #555555;
+  font-style: normal;
+}
+
+.home-index h2 {
+  color: #555555;
+}

@@ -1,0 +1,5 @@
+{{ $pages := where .Site.Pages "Kind" "page" }}
+{{ $visible := where $pages "Params.pageHidden" "!=" true }}
+{{ $sorted := sort $visible "Date" "desc" }}
+{{ range first 15 $sorted }}<p>{{ .Parent.Title }} ⋯ <a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+{{ end }}
