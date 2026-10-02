@@ -2,7 +2,7 @@
 weight: 11
 bookComments: false
 title: "생각"
-bookHidden: false
+bookHidden: true
 ---
 
 # 생각
