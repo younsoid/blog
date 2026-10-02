@@ -5,6 +5,5 @@ bookComments: false
 title: "ᴘʀᴇᴠɪᴏᴜs"
 bookHidden: false
 blogLock: false
-bookLock: true
 ---
 

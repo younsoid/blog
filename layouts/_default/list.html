@@ -2,18 +2,6 @@
   <article class="markdown book-article">
     {{ .Content }}
 
-    {{- if .Params.bookLock }}
-    <div id="lock-gate" style="text-align:center; padding:3rem 0;">
-      <input type="password" id="lock-pw"
-        style="border:1px solid #ddd; border-radius:4px; padding:0.5rem 1rem; font-size:0.9rem; outline:none; text-align:center;"
-        onkeydown="if(event.key==='Enter') checkLock()">
-      <br><br>
-      <button onclick="checkLock()"
-        style="background:none; border:1px solid #ddd; border-radius:4px; padding:0.4rem 1.2rem; font-size:0.85rem; cursor:pointer; color:#666;">확인</button>
-      <p id="lock-error" style="color:#ff9090; font-size:0.8rem; margin-top:0.5rem; display:none;">비밀번호가 틀렸습니다</p>
-    </div>
-    <div id="protected-content" style="display:none;">
-    {{- end }}
 
     {{- $allRaw := where .RegularPages ".Params.pageHidden" "ne" true -}}
     {{- $pages := slice -}}
@@ -103,7 +91,6 @@
       <a id="next-btn" onclick="nextPage()" style="padding: 0.3rem 0.6rem; text-decoration: none; cursor: pointer; color: #aaa;">→</a>
     </div>
 
-    {{- if .Params.bookLock }}</div><!-- /protected-content -->{{- end }}
   </article>
 
   <script>
@@ -200,28 +187,6 @@
     }
     currentPage = parseInt(_p.get('page')) || 1;
 
-    {{- if .Params.bookLock }}
-    // 비밀번호 게이트
-    const LOCK_KEY = 'blog_lock_authed';
-    const LOCK_PW = '8976';
-
-    function checkLock() {
-      const input = document.getElementById('lock-pw');
-      if (input && input.value === LOCK_PW) {
-        localStorage.setItem(LOCK_KEY, 'yes');
-        document.getElementById('lock-gate').style.display = 'none';
-        document.getElementById('protected-content').style.display = '';
-      } else {
-        const err = document.getElementById('lock-error');
-        if (err) err.style.display = '';
-      }
-    }
-
-    if (localStorage.getItem(LOCK_KEY) === 'yes') {
-      document.getElementById('lock-gate').style.display = 'none';
-      document.getElementById('protected-content').style.display = '';
-    }
-    {{- end }}
 
     renderPage();
   </script>
