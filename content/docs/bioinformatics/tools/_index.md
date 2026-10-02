@@ -1,9 +1,8 @@
 ---
-weight: 4
+weight: 3
 title: "𝗍𝗈𝗈𝗅𝗌"
 bookComments: false
 type: docs
-bookHidden: true
 ---
 
 # 𝗍𝗈𝗈𝗅𝗌
