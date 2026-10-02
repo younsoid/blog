@@ -1,10 +1,10 @@
 ---
 weight: 1
-title: "기초지식"
+title: "오믹스 분석"
 bookComments: false
 type: docs
 ---
 
-# 기초지식
+# 오믹스 분석
 
 ---

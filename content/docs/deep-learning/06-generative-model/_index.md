@@ -1,8 +1,8 @@
 ---
 weight: 6
-title: "𝗀𝖾𝗇𝖾𝗋𝖺𝗍𝗂𝗏𝖾 𝗆𝗈𝖽𝖾𝗅"
+title: "생성 모델"
 bookComments: false
 type: docs
 ---
 
-# 𝗀𝖾𝗇𝖾𝗋𝖺𝗍𝗂𝗏𝖾 𝗆𝗈𝖽𝖾𝗅
+# 생성 모델

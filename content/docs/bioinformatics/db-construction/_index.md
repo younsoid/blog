@@ -1,11 +1,10 @@
 ---
-weight: 6
-title: "𝖽𝖻 𝖼𝗈𝗇𝗌𝗍𝗋𝗎𝖼𝗍𝗂𝗈𝗇"
+weight: 3
+title: "유전 임상 DB 구축"
 bookComments: false
 type: docs
-bookHidden: true
 ---
 
-# 𝖽𝖻 𝖼𝗈𝗇𝗌𝗍𝗋𝗎𝖼𝗍𝗂𝗈𝗇
+# 유전 임상 DB 구축
 
 ---

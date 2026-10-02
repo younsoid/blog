@@ -1,9 +1,9 @@
 ---
 weight: 5
-title: "𝗇𝗅𝗉 𝗆𝗈𝖽𝖾𝗅𝗂𝗇𝗀"
+title: "자연어 처리"
 bookComments: false
 type: docs
 ---
 
-# 𝗇𝗅𝗉 𝗆𝗈𝖽𝖾𝗅𝗂𝗇𝗀
+# 자연어 처리
 ---

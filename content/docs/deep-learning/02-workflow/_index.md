@@ -1,10 +1,10 @@
 ---
-weight: 7
-title: "𝗆𝗅 𝗐𝗈𝗋𝗄𝖿𝗅𝗈𝗐"
+weight: 2
+title: "모델 개발과 배포"
 bookComments: false
 type: docs
 ---
 
-# 𝗆𝗅 𝗐𝗈𝗋𝗄𝖿𝗅𝗈𝗐
+# 모델 개발과 배포
 
 ---

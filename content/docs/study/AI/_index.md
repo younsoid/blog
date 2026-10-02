@@ -1,11 +1,11 @@
 ---
 weight: 5
-title: "𝖽𝖺𝗍𝖺 𝗌𝖼𝗂𝖾𝗇𝖼𝖾"
+title: "데이터/AI"
 bookComments: false
 type: docs
 bookHidden: false
 ---
 
-# 𝖽𝖺𝗍𝖺 𝗌𝖼𝗂𝖾𝗇𝖼𝖾
+# 데이터/AI
 
 ---

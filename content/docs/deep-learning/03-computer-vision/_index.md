@@ -1,10 +1,10 @@
 ---
 weight: 3
-title: "𝗏𝗂𝗌𝗂𝗈𝗇 𝗆𝗈𝖽𝖾𝗅𝗂𝗇𝗀"
+title: "컨브넷"
 bookComments: false
 type: docs
 ---
 
-# 𝗏𝗂𝗌𝗂𝗈𝗇 𝗆𝗈𝖽𝖾𝗅𝗂𝗇𝗀
+# 컨브넷
 
 ---

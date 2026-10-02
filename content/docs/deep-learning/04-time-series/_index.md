@@ -1,10 +1,10 @@
 ---
 weight: 4
-title: "𝗍𝗂𝗆𝖾 𝗌𝖾𝗋𝗂𝖾𝗌"
+title: "시계열 모델링"
 bookComments: false
 type: docs
 ---
 
-# 𝗍𝗂𝗆𝖾 𝗌𝖾𝗋𝗂𝖾𝗌
+# 시계열 모델링
 
 ---
