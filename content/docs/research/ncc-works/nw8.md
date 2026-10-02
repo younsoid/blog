@@ -177,4 +177,4 @@ Cf3) S001-083 Report 추출 오류
 
 S001-083 추출할때 VAF 칸에 alt_count(변이 read 수)를 적은 3건도 있었다. Report VAF를 다시 추출해서 적어야할듯하다.
 
-<img width="858" height="178" alt="image" src="https://github.com/user-attachments/assets/1e75115b-3345-490d-9370-ac57f6b96535" />
+<img width="956" height="160" alt="image" src="https://github.com/user-attachments/assets/691496ed-840d-46f8-9630-50365e8381ac" />
