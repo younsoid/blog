@@ -1,6 +1,7 @@
 ---
 title: "첫 번째 글"
 weight: 1
+bookHidden: true
 ---
 
 # 첫 번째 글
