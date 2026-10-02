@@ -1,11 +1,11 @@
 ---
 weight: 2
-title: "AI/Data"
+title: "statistics"
 bookComments: false
 type: docs
 bookHidden: false
 ---
 
-# AI/Data
+# statistics
 
 ---
