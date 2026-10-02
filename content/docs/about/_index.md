@@ -8,7 +8,7 @@ tagHidden: true
 
 #
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/c864a60f-8d62-42fa-bc30-9a79319a09e9" />
+<img width="250" alt="image" src="https://github.com/user-attachments/assets/c864a60f-8d62-42fa-bc30-9a79319a09e9" />
 
 ### ᴀʙᴏᴜᴛ ᴍᴇ
 
