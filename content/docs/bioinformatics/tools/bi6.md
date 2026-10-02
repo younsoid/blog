@@ -1,7 +1,7 @@
 ---
 date : 2025-04-21
 tags: ['2025-04']
-categories: ['wgbs', 'bismark']
+categories: ['bismark']
 bookHidden: true
 title: "WGBS 전처리 (Bismark)"
 ---

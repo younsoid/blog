@@ -1,12 +1,13 @@
 ---
 date : 2025-07-21
 tags: ['2025-07']
-categories: ['env', 'rde']
+categories: ['rde']
 bookHidden: true
 title: "RDE #1 Local PC에서 RDE 환경 구성"
+index: 1
 ---
 
-# env #1 Local PC에서 RDE 환경 구성
+# RDE #1 Local PC에서 RDE 환경 구성
 
 #2025-07-22
 

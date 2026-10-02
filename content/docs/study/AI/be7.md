@@ -1,9 +1,10 @@
 ---
 date : 2025-08-18
 tags: ['2025-08']
-categories: ['SKALA', 'LLM']
+categories: ['llm']
 bookHidden: true
 title: "LLM #1 LLM 이해와 Transformer"
+index: 1
 ---
 
 # LLM #1 LLM 이해와 Transformer

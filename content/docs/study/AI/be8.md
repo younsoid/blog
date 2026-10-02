@@ -1,9 +1,10 @@
 ---
 date : 2025-08-19
 tags: ['2025-08']
-categories: ['SKALA', 'LLM']
+categories: ['llm']
 bookHidden: true
 title: "LLM #2 LLM과 AI 기술요소를 활용하여 비즈니스 서비스 기획안 작성"
+index: 2
 ---
 
 # LLM #2 LLM과 AI 기술요소를 활용하여 비즈니스 서비스 기획안 작성

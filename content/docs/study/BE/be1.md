@@ -1,9 +1,10 @@
 ---
 date : 2025-07-22
 tags: ['2025-07']
-categories: ['Linux']
+categories: ['linux']
 bookHidden: true
 title: "Linux #1 NPM 과 PIP 명령어 목록"
+index: 1
 ---
 
 # Linux #1 NPM 과 PIP 명령어 목록

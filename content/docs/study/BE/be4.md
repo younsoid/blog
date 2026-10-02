@@ -1,12 +1,13 @@
 ---
 date : 2025-07-21
 tags: ['2025-07']
-categories: ['env']
+categories: ['rde']
 bookHidden: true
-title: "개발환경 설정 (GIT, Docker, VScode, RDE 컨테이너)"
+title: "RDE #2 개발환경 설정 (GIT, Docker, VScode, RDE 컨테이너)"
+index: 2
 ---
 
-# env #2 개발환경 설정 (GIT, Docker, VScode, RDE 컨테이너)
+# RDE #2 개발환경 설정 (GIT, Docker, VScode, RDE 컨테이너)
 
 #2025-07-21
 
