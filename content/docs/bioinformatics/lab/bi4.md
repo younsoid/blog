@@ -1,7 +1,7 @@
 ---
 date : 2025-04-21
 tags: ['2025-04']
-categories: ['rna-seq', 'kallisto']
+categories: ['kallisto']
 bookHidden: true
 title: "Kallisto Pseudoalignment 작업"
 ---
