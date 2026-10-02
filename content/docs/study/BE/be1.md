@@ -5,6 +5,7 @@ categories: ['linux']
 bookHidden: true
 title: "Linux #1 NPM 과 PIP 명령어 목록"
 index: 1
+bookComments: true
 ---
 
 # Linux #1 NPM 과 PIP 명령어 목록

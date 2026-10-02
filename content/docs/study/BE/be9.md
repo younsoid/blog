@@ -5,6 +5,7 @@ categories: ['langchain']
 bookHidden: true
 title: "Langchain #3 LangGraph 기반 Multi-Agent + Agentic RAG 시스템"
 index: 3
+bookComments: true
 ---
 
 # Langchain #3 LangGraph 기반 Multi-Agent + Agentic RAG 시스템 

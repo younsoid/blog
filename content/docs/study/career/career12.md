@@ -5,6 +5,7 @@ categories: ['자소서']
 bookHidden: true
 title: "자소서 #2 직무 이해"
 pageHidden: false
+bookComments: true
 ---
 
 # 자소서 #2 직무 이해

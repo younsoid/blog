@@ -4,6 +4,7 @@ tags: ['2025-07']
 categories: ['javascript']
 bookHidden: true
 title: "JavaScript #1 쇼핑몰 주문 처리"
+bookComments: true
 ---
 
 # JavaScript #1 쇼핑몰 주문 처리

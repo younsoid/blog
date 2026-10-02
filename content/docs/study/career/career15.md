@@ -5,6 +5,7 @@ categories: ['채용']
 bookHidden: true
 title: "2월공고"
 pageHidden: false
+bookComments: true
 ---
 
 # 2월공고

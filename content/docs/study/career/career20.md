@@ -5,6 +5,7 @@ categories: ['채용']
 bookHidden: true
 title: "기업 순위 정리"
 pageHidden: false
+bookComments: true
 ---
 
 # 기업 순위 정리

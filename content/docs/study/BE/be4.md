@@ -5,6 +5,7 @@ categories: ['rde']
 bookHidden: true
 title: "RDE #2 개발환경 설정 (GIT, Docker, VScode, RDE 컨테이너)"
 index: 2
+bookComments: true
 ---
 
 # RDE #2 개발환경 설정 (GIT, Docker, VScode, RDE 컨테이너)

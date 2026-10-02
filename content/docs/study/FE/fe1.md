@@ -4,6 +4,7 @@ tags: ['2025-07']
 categories: ['html']
 bookHidden: true
 title: "HTML #1 프로필 웹페이지 작성"
+bookComments: true
 ---
 
 # HTML #1 프로필 웹페이지 작성

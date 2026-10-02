@@ -4,6 +4,7 @@ tags: ['2025-07']
 categories: ['취준']
 bookHidden: true
 title: "2025 하반기 일정"
+bookComments: true
 ---
 
 # 2025 하반기 일정

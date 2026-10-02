@@ -5,6 +5,7 @@ categories: ['llm']
 bookHidden: true
 title: "LLM #2 LLM과 AI 기술요소를 활용하여 비즈니스 서비스 기획안 작성"
 index: 2
+bookComments: true
 ---
 
 # LLM #2 LLM과 AI 기술요소를 활용하여 비즈니스 서비스 기획안 작성

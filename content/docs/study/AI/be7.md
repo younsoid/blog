@@ -5,6 +5,7 @@ categories: ['llm']
 bookHidden: true
 title: "LLM #1 LLM 이해와 Transformer"
 index: 1
+bookComments: true
 ---
 
 # LLM #1 LLM 이해와 Transformer

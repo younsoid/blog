@@ -5,6 +5,7 @@ categories: ['hugo']
 bookHidden: true
 title: "Hugo #4 Markdown HTML 렌더링 문제"
 index: 4
+bookComments: true
 ---
 
 # Hugo #4 Markdown HTML 렌더링 문제

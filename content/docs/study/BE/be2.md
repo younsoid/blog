@@ -5,6 +5,7 @@ categories: ['rde']
 bookHidden: true
 title: "RDE #1 Local PC에서 RDE 환경 구성"
 index: 1
+bookComments: true
 ---
 
 # RDE #1 Local PC에서 RDE 환경 구성

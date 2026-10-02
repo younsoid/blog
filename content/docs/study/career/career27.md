@@ -4,6 +4,7 @@ tags: ['2026-05']
 categories: ['career']
 bookHidden: true
 title: "연세대학교 의과학과 연구실"
+bookComments: true
 ---
 
 # 연세대학교 의과학과 연구실

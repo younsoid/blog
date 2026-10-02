@@ -5,6 +5,7 @@ categories: ['채용']
 bookHidden: true
 title: "2월말 공고 (+ 3월 추가)"
 pageHidden: false
+bookComments: true
 ---
 
 # 2월말 공고 (+ 3월 추가)

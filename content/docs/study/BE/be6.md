@@ -5,6 +5,7 @@ categories: ['ray']
 bookHidden: true
 title: "Ray #1 Batch Prediction with Ray Core"
 index: 1
+bookComments: true
 ---
 
 # Ray #1 Batch Prediction with Ray Core

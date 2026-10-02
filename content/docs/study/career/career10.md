@@ -5,6 +5,7 @@ categories: ['자소서']
 bookHidden: true
 title: "자소서 #1 해당산업과 자사를 선택한 이유"
 pageHidden: false
+bookComments: true
 ---
 
 # 자소서 #1 해당산업과 자사를 선택한 이유
