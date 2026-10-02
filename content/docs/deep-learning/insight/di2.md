@@ -5,6 +5,7 @@ categories: ['deep-learning']
 bookHidden: true
 title: "딥러닝"
 bookComments: true
+index: 2
 ---
 
 # 딥러닝
