@@ -5,6 +5,7 @@ categories: ['hugo']
 bookHidden: true
 title: "Hugo #1 사이트 생성, 깃허브 배포"
 bookComments: true
+index: 1
 ---
 
 # Hugo #1 사이트 생성, 깃허브 배포
