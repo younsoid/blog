@@ -1,10 +1,10 @@
 ---
 weight: 3
-title: "백엔드"
+title: "backend"
 bookComments: false
 type: docs
 ---
 
-# 백엔드
+# backend
 
 ---
