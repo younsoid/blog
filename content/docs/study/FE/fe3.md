@@ -4,6 +4,7 @@ tags: ['2025-07']
 categories: ['hugo']
 bookHidden: true
 title: "Hugo #4 Markdown HTML 렌더링 문제"
+index: 4
 ---
 
 # Hugo #4 Markdown HTML 렌더링 문제
