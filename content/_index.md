@@ -1,5 +1,5 @@
 ---
-title: "ʀᴇꜱᴇᴀʀᴄʜ ɴᴏᴛᴇ (๑˘ ᵕ˘๑)"
+title: "ʀᴇꜱᴇᴀʀᴄʜ ɴᴏᴛᴇ"
 type: docs
 bookComments: false
 ---
