@@ -1,7 +1,7 @@
 ---
 date : 2026-06-15
 tags: ['2026-06']
-categories: ['kosmos2']
+categories: ['ngs']
 bookHidden: true
 title: "최종 비매칭 78건과 유전자 및 샘플별 시각화"
 bookComments: true

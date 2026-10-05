@@ -1,7 +1,7 @@
 ---
 date : 2026-06-02
 tags: ['2026-06']
-categories: ['kosmos2']
+categories: ['ngs']
 bookHidden: true
 title: "통합 MAF 파일 생성 및 1차 매칭"
 bookComments: true

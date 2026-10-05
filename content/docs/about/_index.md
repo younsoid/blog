@@ -2,7 +2,7 @@
 weight: 10
 bookFlatSection: true
 bookComments: false
-title: "ᴀʙᴏᴜᴛ ᴍᴇ"
+title: "ᴀʙᴏᴜᴛ"
 tagHidden: true
 ---
 

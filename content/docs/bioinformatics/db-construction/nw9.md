@@ -1,7 +1,7 @@
 ---
 date : 2026-06-17
 tags: ['2026-06']
-categories: ['kosmos2']
+categories: ['ngs']
 bookHidden: true
 title: "고빈도 샘플을 VCF로 매칭"
 bookComments: true

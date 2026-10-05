@@ -94,7 +94,7 @@ grad(loss_val, w) = grad(loss_val, x2) * grad(x2, x1) * grad(x1, w)
                   = 1 * 1 * 2 = 2
 grad(loss_val, b) = grad(loss_val, x2) * grad(x2, b)
                   = 1 * 1 = 1
-```plain text
+```
 
 만약 두 노드를 잇는 경로가 여러 갈래라면, 각 경로마다 이렇게 곱해서 얻은 값을 전부 더해야 grad(a, b)가 된다. 
 

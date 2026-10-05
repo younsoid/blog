@@ -1,7 +1,7 @@
 ---
 date : 2026-06-05
 tags: ['2026-06']
-categories: ['kosmos2']
+categories: ['ngs']
 bookHidden: true
 title: "HER2 CNV 작업"
 bookComments: true

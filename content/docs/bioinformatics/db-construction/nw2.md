@@ -1,7 +1,7 @@
 ---
 date : 2026-06-02
 tags: ['2026-06']
-categories: ['kosmos2']
+categories: ['ngs']
 bookHidden: true
 title: "NGS Report 표준화"
 bookComments: true

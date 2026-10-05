@@ -1,7 +1,7 @@
 ---
 date : 2026-06-15
 tags: ['2026-06']
-categories: ['kosmos2']
+categories: ['ngs']
 bookHidden: true
 title: "고빈도 유전자, 고빈도 샘플 매칭"
 bookComments: true

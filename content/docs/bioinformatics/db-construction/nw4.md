@@ -1,7 +1,7 @@
 ---
 date : 2026-06-02
 tags: ['2026-06']
-categories: ['kosmos2']
+categories: ['ngs']
 bookHidden: true
 title: "revised_aa 오매칭 케이스 필터링"
 bookComments: true
