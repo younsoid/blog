@@ -3,12 +3,12 @@ date : 2026-10-05
 tags: ['2026-10']
 categories: ['연구']
 bookHidden: true
-title: "일단 짜본 파이프라인"
+title: "연구 계획"
 bookComments: true
-index: 1
+index: 3
 ---
 
-# 일단 짜본 파이프라인
+# 연구 계획
 
 #2026-10-05
 
