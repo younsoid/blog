@@ -1,10 +1,11 @@
 ---
 date : 2026-06-05
 tags: ['2026-06']
-categories: ['ngs']
+categories: ['ngsreport']
 bookHidden: true
 title: "HER2 CNV 작업"
 bookComments: true
+index: 3
 ---
 
 # HER2 CNV 작업

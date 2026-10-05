@@ -8,13 +8,11 @@ tagHidden: true
 
 #
 
-<img width="150" alt="image" src="https://github.com/user-attachments/assets/c864a60f-8d62-42fa-bc30-9a79319a09e9" />
-
 ### ᴀʙᴏᴜᴛ ᴍᴇ
 
 - ~2023.08 ⋯ 경북대학교 자연과학대학 생명공학전공 학사 졸업
-- ~2026.02 ⋯ 경북대학교 IT대학 컴퓨터학부 석사 졸업
 - 2025.07~2025.12 ⋯ SK AX AI Leader Academy(SKALA) 수료
+- ~2026.02 ⋯ 경북대학교 IT대학 컴퓨터학부 석사 졸업
 - 2026.04~ ⋯ 국립암센터 암빅데이터센터 재직중
 
 ###

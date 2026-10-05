@@ -1,0 +1,19 @@
+{{- $pages := where .RegularPages ".Params.pageHidden" "ne" true -}}
+{{- $tagCounts := dict -}}
+{{- range $pages -}}
+  {{- range .Params.categories -}}
+    {{- $cur := default 0 (index $tagCounts .) -}}
+    {{- $tagCounts = merge $tagCounts (dict . (add $cur 1)) -}}
+  {{- end -}}
+{{- end -}}
+{{- $sortedTags := slice -}}
+{{- range $name, $count := $tagCounts -}}
+  {{- $sortedTags = $sortedTags | append (dict "name" $name "count" $count) -}}
+{{- end -}}
+{{- $sortedTags = sort $sortedTags "count" "desc" -}}
+<nav class="tag-badges">
+  <span data-cat="" onclick="filterByCategory(null)" style="display: block; font-size: 0.8rem; color: #aaa; margin: 0.3rem 0; cursor: pointer;">#전체 ({{ len $pages }})</span>
+  {{- range $sortedTags }}
+  <span data-cat="{{ .name }}" onclick="filterByCategory('{{ .name }}')" style="display: block; font-size: 0.8rem; color: #aaa; margin: 0.3rem 0; cursor: pointer;">#{{ .name }} ({{ .count }})</span>
+  {{- end }}
+</nav>

@@ -13,78 +13,14 @@
         {{- range $noIdx.ByTitle -}}{{- $pages = $pages | append . -}}{{- end -}}
       {{- end -}}
 
-      {{- $tagCounts := dict -}}
-      {{- range $pages -}}
-        {{- range .Params.categories -}}
-          {{- $cur := default 0 (index $tagCounts .) -}}
-          {{- $tagCounts = merge $tagCounts (dict . (add $cur 1)) -}}
-        {{- end -}}
-      {{- end -}}
-      {{- $sortedTags := slice -}}
-      {{- range $name, $count := $tagCounts -}}
-        {{- $sortedTags = $sortedTags | append (dict "name" $name "count" $count) -}}
-      {{- end -}}
-      {{- $sortedTags = sort $sortedTags "count" "desc" -}}
 
-      {{- if not $.Params.tagHidden }}
-      <div id="tag-badges" style="margin: 0.3rem 0 0.5rem 0;">
-        <span data-cat="" onclick="filterByCategory(null)" style="font-size: 0.8rem; color: #aaa; margin-right: 0.6rem; cursor: pointer;">#전체 ({{ len $pages }})</span>
-        {{- range $sortedTags }}
-        <span data-cat="{{ .name }}" onclick="filterByCategory('{{ .name }}')" style="font-size: 0.8rem; color: #aaa; margin-right: 0.6rem; cursor: pointer;">#{{ .name }} ({{ .count }})</span>
-        {{- end }}
-      </div>
-      {{- end }}
 
       <p id="active-filter" style="display:none; font-size:0.8rem; color:#999; margin-bottom:0.5rem;" data-current=""></p>
 
       {{- range $pages }}
         {{- $cats := delimit (.Params.categories | default slice) "|" -}}
-        {{- $content := .RawContent -}}
-        {{- $content = replaceRE `(?s)^.*?---\s*\n+` "" $content -}}
-        {{- $content = replaceRE "(?s)```.*?```" "" $content -}}
-        {{- $content = replaceRE `!\[.*?\]\(.*?\)` "" $content -}}
-        {{- $content = replaceRE `<img[^>]*>` "" $content -}}
-        {{- $content = replaceRE `\[([^\]]+)\]\([^\)]+\)` "$1" $content -}}
-        {{- $content = replaceRE `(?m)^#+\s*` "" $content -}}
-        {{- $content = replaceRE `#\S+` "" $content -}}
-        {{- $content = replaceRE `(?m)^\d+\s+` "" $content -}}
-        {{- $content = replaceRE `\n\n+` " " $content -}}
-        {{- $cleanContent := trim ($content | plainify) " \t\n\r" -}}
-
-        {{- $firstImg := "" -}}
-        {{- $mdImgMatch := findRE `!\[[^\]]*\]\(([^)]+)\)` .RawContent 1 -}}
-        {{- $htmlImgMatch := findRE `<img[^>]*src="([^"]+)"[^>]*/?>` .RawContent 1 -}}
-        {{- if $mdImgMatch -}}
-          {{- $firstImg = replaceRE `!\[[^\]]*\]\(([^)]+)\)` "$1" (index $mdImgMatch 0) -}}
-        {{- else if $htmlImgMatch -}}
-          {{- $firstImg = replaceRE `<img[^>]*src="([^"]+)"[^>]*/?>` "$1" (index $htmlImgMatch 0) -}}
-        {{- end -}}
-
         <div class="post-item" data-categories="{{ $cats }}" style="display:none;">
-          <div style="display: flex; gap: 1rem; align-items: flex-start;">
-            <div style="flex: 1; min-width: 0;">
-              {{- if $cleanContent -}}
-                <p><em>{{ .Date.Format "2006-01-02" }}</em> ⋯ {{ .Title }}</p>
-                <p style="height: 4.5em; overflow: hidden;">
-                  <a href="{{ .RelPermalink }}">{{ $cleanContent }}</a>
-                </p>
-              {{- else -}}
-                <p><em>{{ .Date.Format "2006-01-02" }}</em> ⋯ <a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
-                <p style="height: 4.5em; overflow: hidden;"><br><br><br></p>
-              {{- end -}}
-              {{- if .Params.categories -}}
-              <p style="color: #999; font-size: 0.85em; margin: 0.3rem 0;">
-                {{- range .Params.categories }}#{{ . }} {{ end -}}
-              </p>
-              {{- end -}}
-            </div>
-            {{- if $firstImg -}}
-            <div class="post-thumb" style="flex: 0 0 130px; width: 130px; height: 130px; overflow: hidden; align-self: center;">
-              <img src="{{ $firstImg }}" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" loading="lazy">
-            </div>
-            {{- end -}}
-          </div>
-          <hr>
+          <p style="margin: 0.9rem 0;"><em>{{ .Date.Format "2006-01-02" }}</em> ⋯ <a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
         </div>
       {{- end }}
 
@@ -97,7 +33,7 @@
   </article>
 
   <script>
-    const POSTS_PER_PAGE = 10;
+    const POSTS_PER_PAGE = 20;
     let currentPage = 1;
     let activeFilter = null;
 
@@ -156,7 +92,7 @@
 
     function filterByCategory(cat) {
       const filterEl = document.getElementById('active-filter');
-      const badges = document.querySelectorAll('#tag-badges span');
+      const badges = document.querySelectorAll('.tag-badges span');
       if (!cat || activeFilter === cat) {
         activeFilter = null;
         currentPage = 1;
@@ -173,23 +109,28 @@
     }
 
     const h1 = document.querySelector('.book-article h1');
-    const tagsEl = document.getElementById('tag-badges');
     const filterEl = document.getElementById('active-filter');
-    if (h1 && tagsEl) h1.after(tagsEl);
-    if (tagsEl && filterEl) tagsEl.after(filterEl);
-    else if (h1 && filterEl) h1.after(filterEl);
+    if (h1 && filterEl) h1.after(filterEl);
 
     // URL에서 상태 복원
     const _p = new URLSearchParams(window.location.search);
     const _cat = _p.get('cat');
     if (_cat) {
       activeFilter = _cat;
-      document.querySelectorAll('#tag-badges span').forEach(b => {
-        b.style.display = b.dataset.cat === _cat ? '' : 'none';
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.tag-badges span').forEach(b => {
+          b.style.display = b.dataset.cat === _cat ? '' : 'none';
+        });
       });
     }
     currentPage = parseInt(_p.get('page')) || 1;
 
     renderPage();
   </script>
+{{ end }}
+
+{{ define "toc" }}
+  {{- if not .Params.tagHidden }}
+    {{- partial "docs/tag-badges" . }}
+  {{- end }}
 {{ end }}

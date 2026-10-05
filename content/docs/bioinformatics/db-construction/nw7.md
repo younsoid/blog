@@ -1,13 +1,14 @@
 ---
 date : 2026-06-15
 tags: ['2026-06']
-categories: ['ngs']
+categories: ['maf-ngsreport']
 bookHidden: true
-title: "최종 비매칭 78건과 유전자 및 샘플별 시각화"
+title: "MAF Report 비매칭 78건 시각화"
 bookComments: true
+index: 1
 ---
 
-# 최종 비매칭 78건과 유전자 및 샘플별 시각화
+# MAF Report 비매칭 78건 시각화
 
 #2026-06-15
 

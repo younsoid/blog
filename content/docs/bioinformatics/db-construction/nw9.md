@@ -1,13 +1,13 @@
 ---
 date : 2026-06-17
 tags: ['2026-06']
-categories: ['ngs']
+categories: ['maf-ngsreport']
 bookHidden: true
-title: "고빈도 샘플을 VCF로 매칭"
+title: "MAF Report 비매칭 78건 수기 매칭 - VCF 활용"
 bookComments: true
 ---
 
-# 고빈도 샘플을 VCF로 매칭
+# MAF Report 비매칭 78건 수기 매칭 - VCF 활용
 
 #2026-06-17
 

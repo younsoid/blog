@@ -1,13 +1,14 @@
 ---
 date : 2026-06-05
 tags: ['2026-06']
-categories: ['ngs']
+categories: ['maf-ngsreport']
 bookHidden: true
-title: "1차 매칭 결과"
+title: "MAF Report 매칭 결과"
 bookComments: true
+index: 1
 ---
 
-# 1차 매칭 결과
+# MAF Report 매칭 결과
 
 #2026-06-05
 

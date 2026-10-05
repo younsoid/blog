@@ -1,13 +1,14 @@
 ---
 date : 2026-06-02
 tags: ['2026-06']
-categories: ['ngs']
+categories: ['maf-ngsreport']
 bookHidden: true
-title: "통합 MAF 파일 생성 및 1차 매칭"
+title: "MAF Report 매칭"
 bookComments: true
+index: 3
 ---
 
-# 통합 MAF 파일 생성 및 1차 매칭
+# MAF Report 매칭
 
 #2026-06-02
 

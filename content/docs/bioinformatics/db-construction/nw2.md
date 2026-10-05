@@ -1,10 +1,11 @@
 ---
 date : 2026-06-02
 tags: ['2026-06']
-categories: ['ngs']
+categories: ['maf-ngsreport']
 bookHidden: true
 title: "NGS Report 표준화"
 bookComments: true
+index: 2
 ---
 
 # NGS Report 표준화

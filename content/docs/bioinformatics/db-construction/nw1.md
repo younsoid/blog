@@ -1,13 +1,14 @@
 ---
 date : 2026-06-02
 tags: ['2026-06']
-categories: ['ngs']
+categories: ['maf-ngsreport']
 bookHidden: true
-title: "MAF 파일 표준화"
+title: "MAF 표준화"
 bookComments: true
+index: 1
 ---
 
-# MAF 파일 표준화
+# MAF 표준화
 
 #2026-06-02
 
