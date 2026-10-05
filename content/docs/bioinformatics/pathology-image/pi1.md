@@ -3,11 +3,12 @@ date : 2026-10-05
 tags: ['2026-10']
 categories: ['paper']
 bookHidden: true
-title: "Evaluation of Pan-Cancer Immune Heterogeneity Based on DNA Methylation"
+title: "Paper #1 Evaluation of Pan-Cancer Immune Heterogeneity Based on DNA Methylation"
 bookComments: true
+index: 1
 ---
 
-# Evaluation of Pan-Cancer Immune Heterogeneity Based on DNA Methylation
+# Paper #1 Evaluation of Pan-Cancer Immune Heterogeneity Based on DNA Methylation
 
 #2026-10-05
 
