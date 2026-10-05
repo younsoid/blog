@@ -1,7 +1,7 @@
 ---
 date : 2026-06-02
 tags: ['2026-06']
-categories: ['maf-ngsreport']
+categories: ['maf', 'ngsreport']
 bookHidden: true
 title: "revised_aa 오매칭 케이스 필터링"
 bookComments: true

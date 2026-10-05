@@ -1,5 +1,5 @@
 ---
-date : 2026-10-05
+date : 2026-10-03
 tags: ['2026-10']
 categories: ['paper']
 bookHidden: true
@@ -283,4 +283,4 @@ index: 1
 
 #출처
 
-Zhou, Yang, et al. "Evaluation of pan-cancer immune heterogeneity based on DNA methylation." Genes 16.2 (2025): 160.
+논문 Zhou, Yang, et al. "Evaluation of pan-cancer immune heterogeneity based on DNA methylation." Genes 16.2 (2025): 160.

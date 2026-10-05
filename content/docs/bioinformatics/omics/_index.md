@@ -1,10 +1,10 @@
 ---
-weight: 1
-title: "오믹스 분석"
+weight: 2
+title: "데이터 분석"
 bookComments: false
 type: docs
 ---
 
-# 오믹스 분석
+# 데이터 분석
 
 ---

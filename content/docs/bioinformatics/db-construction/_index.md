@@ -1,11 +1,11 @@
 ---
-weight: 2
-title: "DB 구축"
+weight: 1
+title: "데이터 구축"
 bookComments: false
 type: docs
 ---
 
-# DB 구축
+# 데이터 구축
 
 ---
 

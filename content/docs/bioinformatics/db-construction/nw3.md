@@ -1,7 +1,7 @@
 ---
 date : 2026-06-02
 tags: ['2026-06']
-categories: ['maf-ngsreport']
+categories: ['maf', 'ngsreport']
 bookHidden: true
 title: "MAF Report 매칭"
 bookComments: true
