@@ -14,44 +14,6 @@ index: 1
 
 ---
 
-<grayblock>
-   
-1. 예측 모델
-    * 공통: 슬라이드 벡터 → StandardScaler → 선형 모델 (pipeline 안에서 scaler 학습 → fold 간 정규화 누수 없음)
-    * 분류 (06, 08b, 09): <mark>LogisticRegression (max_iter 1000, class_weight balanced)</mark>
-    	- 06: <mark>5-class (C1·C2·C3·C4·C6), 3명 미만 클래스 제외</mark>
-    	- 08b: immune-rich vs immune-depleted 이진 (intermediate 제외)
-    * 회귀 (07a): Ridge (α = 10 고정)
-    * 09 단계적 비교 (타깃: 08a immune_binary, WSI: 1.0 mean_std)
-    	- <mark>① WSI only (1536)</mark>
-    	- ② WSI + methylation 클러스터 one-hot (1539)
-    	- ③ WSI + mmc2 점수 5종 LF·SF·LISS·IFN-γ·TGF-β (1541)
-    	- ④ WSI + ② + ③ (1544)
-    	- 모든 데이터가 있는 공통 환자만 사용
-    * 하이퍼파라미터 최적화 안 함
-
-2. 학습·검증 설계
-  * 5-fold CV, shuffle, random_state 42
-  	- <mark>분류: StratifiedKFold</mark> / 회귀: KFold
-  	- 06·07a·08b는 슬라이드 단위 분할 → 같은 환자의 슬라이드가 train과 test에 동시에 들어갈 수 있음
-  	- 09는 환자당 슬라이드 1장 (dict에 마지막으로 들어간 슬라이드)
-  * site-aware split, 외부 검증, 암종 간 hold-out 없음
-  * 지표 계산: 분류는 <mark>fold별 계산 후 평균</mark>, 회귀는 out-of-fold 예측 전체로 계산
-
-3. Immune subtype 예측 (WSI 단독, 5-class)
-    * n = 947 슬라이드: C1 307 / C2 343 / C3 172 / C4 85 / C6 40
-    * pooling별 (acc / macro-F1)
-    	- mean_std 0.434 ± 0.028 / 0.333 ± 0.028 (최고)
-    	- mean 0.422 / 0.330
-    	- max 0.389 / 0.285
-    	- attention 0.382 / 0.293
-    * 기준선: 최빈 클래스(C2) 비율 0.362, 5-class 무작위 F1 ≈ 0.20
-    	- 무작위보다는 높지만 아형 구분력은 제한적
-
-</grayblock>
-
-###
-
 모델이 슬라이드이미지 벡터를 받아서 예측하려는 대상인 Immune label은 일단 3가지로 정했는데 첫번째는 mmc2 Immune subtype 및 Immune 점수이다.
 
 mmc2는 TCGA 환자 1만여 명의 유전자 데이터를 분석해서, 환자마다 면역 유형(C1~C6)과 여러 면역 점수를 계산한 값이다. mmc2.xlsx는 논문의 supplementary를 직접 다운로드 했다.
@@ -138,3 +100,43 @@ WSI 단독 -> immune subtype 예측 (교차검증)
 전부 가장 많은 아형인 C2로 찍었을때 정확도(최빈 클래스 정확도)랑 5지선다를 랜덤으로 찍었을때(무작위 macro-F1, 여기서는 1/5)의 F1이 각각 0.362, 0.200인데 그에 비하면 정확도는 성능이 낮고 F1은 그것보단 조금 나은 수준이다.
 
 여기서 알수있는 사실은 1) mean_std 쓰는것이 좋다는것과 2) wsi로 immune subtype 예측은 성능이 잘 안나온다는 점이다. 
+
+###
+
+#요약
+
+<grayblock>
+   
+1. 예측 모델
+    * 공통: 슬라이드 벡터 → StandardScaler → 선형 모델 (pipeline 안에서 scaler 학습 → fold 간 정규화 누수 없음)
+    * 분류 (06, 08b, 09): <mark>LogisticRegression (max_iter 1000, class_weight balanced)</mark>
+    	- 06: <mark>5-class (C1·C2·C3·C4·C6), 3명 미만 클래스 제외</mark>
+    	- 08b: immune-rich vs immune-depleted 이진 (intermediate 제외)
+    * 회귀 (07a): Ridge (α = 10 고정)
+    * 09 단계적 비교 (타깃: 08a immune_binary, WSI: 1.0 mean_std)
+    	- <mark>① WSI only (1536)</mark>
+    	- ② WSI + methylation 클러스터 one-hot (1539)
+    	- ③ WSI + mmc2 점수 5종 LF·SF·LISS·IFN-γ·TGF-β (1541)
+    	- ④ WSI + ② + ③ (1544)
+    	- 모든 데이터가 있는 공통 환자만 사용
+    * 하이퍼파라미터 최적화 안 함
+
+2. 학습·검증 설계
+  * 5-fold CV, shuffle, random_state 42
+  	- <mark>분류: StratifiedKFold</mark> / 회귀: KFold
+  	- 06·07a·08b는 슬라이드 단위 분할 → 같은 환자의 슬라이드가 train과 test에 동시에 들어갈 수 있음
+  	- 09는 환자당 슬라이드 1장 (dict에 마지막으로 들어간 슬라이드)
+  * site-aware split, 외부 검증, 암종 간 hold-out 없음
+  * 지표 계산: 분류는 <mark>fold별 계산 후 평균</mark>, 회귀는 out-of-fold 예측 전체로 계산
+
+3. Immune subtype 예측 (WSI 단독, 5-class)
+    * n = 947 슬라이드: C1 307 / C2 343 / C3 172 / C4 85 / C6 40
+    * pooling별 (acc / macro-F1)
+    	- mean_std 0.434 ± 0.028 / 0.333 ± 0.028 (최고)
+    	- mean 0.422 / 0.330
+    	- max 0.389 / 0.285
+    	- attention 0.382 / 0.293
+    * 기준선: 최빈 클래스(C2) 비율 0.362, 5-class 무작위 F1 ≈ 0.20
+    	- 무작위보다는 높지만 아형 구분력은 제한적
+
+</grayblock>
