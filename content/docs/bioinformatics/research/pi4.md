@@ -1,16 +1,16 @@
 ---
-date : 2026-10-05
+date : 2026-10-06
 tags: ['2026-10']
 categories: ['paper']
 bookHidden: true
 title: "Paper #3 Regression-based Deep-Learning predicts molecular biomarkers from pathology slides"
 bookComments: true
-index: 2
+index: 3
 ---
 
 # Paper #3 Regression-based Deep-Learning predicts molecular biomarkers from pathology slides
 
-#2026-10-05
+#2026-10-06
 
 ---
 
@@ -29,6 +29,24 @@ index: 2
 	- Schirris: MIL 회귀로 sTIL 예측, attention 없음이 한계
 	- Weitz: attention 넣으니 일반화 저하 (단일 암, 소규모)
 	- Graziani: attMIL 회귀 제안, 분류와 체계적 비교·검증 부족
+
+<grayblock>
+
+- 요즘은 유전자 돌연변이, msi, gene set 단위 발현량을 슬라이드 이미지로 예측할수있다. 
+  - wsi -> 유전적 변화 예측 -> 환자의 예후 예측 << 이게 가능해지는 중이다. 
+- 슬라이드 -> 유전정보 예측
+  - 약지도 weakly supervised 문제이다. 
+- 슬라이드는 수천개 패치인데 어디에 유전정보 하나가 매칭되는지가 핵심이다 (대부분은 결합조직, 지방 등 바이어마커와 무관한 부위)
+  - 가장 많이 쓰이는 방법이 attention 기반 다중 인스턴스 학습(attMIL)
+  - 각 조각에서 특징 벡터를 뽑고 그 가중치로 조각들을 합쳐 환자단위 예측을 낸다. 대표 논문이 CLAM이다.
+- attMIL 기반 논문들은 대부분 분류문제만 다룬다. (유전자 변이가 있다 없다)
+  - wgd(전장 유전체 중복): 유전체가 몇배가 되었는지
+  - cna(복제수 변이): 특정 부위가 몇개로 늘거나 줄었는지
+  - hrd: dna 손상을 고치는 능력이 얼마나 손상되었는지 수치
+  - 기타 유전자 발현량, 단백질량 등이 모두 연속형이다.
+
+</grayblock>
+
 * 가설: 약지도 H&E 분석에서 회귀 > 분류
 	- ① 예측 성능 ② 임상적으로 알려진 영역과의 대응 ③ 예후 예측력
 * 제안: CAMIL regression = 자기지도 특징추출 + attMIL 회귀
@@ -36,7 +54,19 @@ index: 2
 
 <grayblock>
 
-- 유전형-표현형 상관, 즉 슬라이드 형태 패턴으로 유전형 변화를 예측할수있다. 
+- 회귀를 쓰면?
+  - 슬라이드벡터와 유전자 수치 사이의 관계를 그대로 학습 (유전자 수치를 구간화한게 아니라)
+- 성능평가는?
+  - 바이오마커 예측성능
+  - 모델이 슬라이드의 어디를 봤는지가 임상적으로 중요한지. (림프구 침윤 예측 모델임연 림프구가 몰린곳을 보고있는지 등)
+  - 생존 분석
+- CAMIL regression
+  - 대조 군집 attention 기반 다중 인스턴스 학습
+  - 앞 구조는 특징 추출기: 병리 이미지로 자기지도학습. 
+  - 뒤 구조는 attMIL인데 분류 대신 회귀. 
+- 성능 비교는
+  - 회귀 말고 분류 버전
+  - 다른 회귀 방법과 비교한다.
 
 </grayblock>
 
@@ -48,6 +78,21 @@ index: 2
 * WSI = bag, 타일 = instance, 라벨은 bag에만 (CLAM 노트 2장 참고)
 * 타일 특징 → attention 점수 → 가중합 → 환자 단위 예측
 * 기반: Ilse et al. (2018) attention-based deep MIL
+
+<grayblock>
+
+- 약지도학습은?
+  - 사과를 상자째로 샀는데, 상자에 라벨이 '이 상자에는 썩은사과가 있음/없음' 혹은 '팔수있음/없음'이라는 딱지만 붙어있고, 어느 사과가 썩었는지는 적혀있지 않다. 앞으로 상자를 받아서 썩은사과가 있는지 혹은 팔수있는지 없는지를 판단하는 법을 배워야 한다면? 이게 약지도 학습.
+  - multiple instance learning, mil
+  - 상자가 가방, 사과 각각이 인스턴스, 정답은 가방에만.
+- 병리슬라이드는
+  - 슬라이드가 가방, 타일이 인스턴스, 정답은 '이 환자의 hrd는 58' 같은 환자단위값. 어느 타일이 그 점수와 관련있는지는 모르고 타일 대부분은 지방, 결합조직처럼 정답과 무관할수있다.
+  - 모델이 스스로 어느 타일을 봐야할지/그 타일들로 정답을 어떻게 낼지 배워야 한다.
+- 타일 특징 뽑기
+  - RetCCL로 타일 하나를 2048개 숫자로 변환했다.
+  - 이 숫자를 어떻게 pooling 할것인가?
+
+</grayblock>
 
 2.2 자기지도 특징추출기 RetCCL
 * ImageNet 사전학습 ResNet50 → 병리 WSI 32,000장으로 대조 군집(contrastive clustering) 자기지도 미세조정
