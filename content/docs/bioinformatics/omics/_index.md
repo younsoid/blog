@@ -1,10 +1,10 @@
 ---
 weight: 2
-title: "데이터 분석"
+title: "분석 tools"
 bookComments: false
 type: docs
 ---
 
-# 데이터 분석
+# 분석 tools
 
 ---
