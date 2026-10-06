@@ -14,6 +14,33 @@ index: 1
 
 ---
 
+1. 예측 모델
+    * 공통: 슬라이드 벡터 → StandardScaler → 선형 모델 (pipeline 안에서 scaler 학습 → fold 간 정규화 누수 없음)
+    * 분류 (06, 08b, 09): <mark>LogisticRegression (max_iter 1000, class_weight balanced)</mark>
+    	- 06: <mark>5-class (C1·C2·C3·C4·C6), 3명 미만 클래스 제외</mark>
+    	- 08b: immune-rich vs immune-depleted 이진 (intermediate 제외)
+    * 회귀 (07a): Ridge (α = 10 고정)
+    * 09 단계적 비교 (타깃: 08a immune_binary, WSI: 1.0 mean_std)
+    	- <mark>① WSI only (1536)</mark>
+    	- ② WSI + methylation 클러스터 one-hot (1539)
+    	- ③ WSI + mmc2 점수 5종 LF·SF·LISS·IFN-γ·TGF-β (1541)
+    	- ④ WSI + ② + ③ (1544)
+    	- 모든 데이터가 있는 공통 환자만 사용
+    * 하이퍼파라미터 최적화 안 함
+
+
+2. Immune subtype 예측 (WSI 단독, 5-class)
+    * n = 947 슬라이드: C1 307 / C2 343 / C3 172 / C4 85 / C6 40
+    * pooling별 (acc / macro-F1)
+    	- mean_std 0.434 ± 0.028 / 0.333 ± 0.028 (최고)
+    	- mean 0.422 / 0.330
+    	- max 0.389 / 0.285
+    	- attention 0.382 / 0.293
+    * 기준선: 최빈 클래스(C2) 비율 0.362, 5-class 무작위 F1 ≈ 0.20
+    	- 무작위보다는 높지만 아형 구분력은 제한적
+
+###
+
 모델이 슬라이드이미지 벡터를 받아서 예측하려는 대상인 Immune label은 일단 3가지로 정했는데 첫번째는 mmc2 Immune subtype 및 Immune 점수이다.
 
 mmc2는 TCGA 환자 1만여 명의 유전자 데이터를 분석해서, 환자마다 면역 유형(C1~C6)과 여러 면역 점수를 계산한 값이다. mmc2.xlsx는 논문의 supplementary를 직접 다운로드 했다.
@@ -75,13 +102,6 @@ print(f"전체 슬라이드: {len(slide_ids)}")
 print(f"라벨 매칭 성공: {len(matched_ids)}")
 if matched_ids:
     print("매칭된 subtype 분포:", dict(Counter(matched_y)))
-    print("\n매칭 예시:")
-    for sid, y in list(zip(matched_ids, matched_y))[:5]:
-        print(f"  {sid[:22]}... (환자 {patient_of(sid)}) -> {y}")
-else:
-    print("\n매칭 0건 — 확인:")
-    print("  슬라이드 id 예:", slide_ids[:2])
-    print("  라벨 barcode 예:", list(label_map.keys())[:5])
 ```
 ```plain text
 전체 슬라이드: 960
@@ -90,3 +110,20 @@ else:
 ```
 
 다운받아놓은 슬라이드 960장 중에 라벨이 존재하는 샘플은 947개였다.
+
+947개 슬라이드벡터를 가지고 immune subtype을 로지스틱회귀로 예측해봐서, 앞서 pooling을 4가지로 했었는데 어떤 방법이 제일 정확도가 높은지 우선 확인해본다. (뒤에서 그것만 쓰게)
+
+```plain text
+WSI 단독 -> immune subtype 예측 (교차검증)
+
+  mean      : n=947, 클래스=[np.str_('C1'), np.str_('C2'), np.str_('C3'), np.str_('C4'), np.str_('C6')], acc=0.422+/-0.045, f1=0.330+/-0.024
+  max       : n=947, 클래스=[np.str_('C1'), np.str_('C2'), np.str_('C3'), np.str_('C4'), np.str_('C6')], acc=0.389+/-0.031, f1=0.285+/-0.033
+  mean_std  : n=947, 클래스=[np.str_('C1'), np.str_('C2'), np.str_('C3'), np.str_('C4'), np.str_('C6')], acc=0.434+/-0.028, f1=0.333+/-0.028
+  attention : n=947, 클래스=[np.str_('C1'), np.str_('C2'), np.str_('C3'), np.str_('C4'), np.str_('C6')], acc=0.382+/-0.031, f1=0.293+/-0.025
+```
+
+결과를 보면 mead_std가 정확도 0.434, macro-F1 0.333로 가장 성능이 좋았다. 
+
+전부 가장 많은 아형인 C2로 찍었을때 정확도(최빈 클래스 정확도)랑 5지선다를 랜덤으로 찍었을때(무작위 macro-F1, 여기서는 1/5)의 F1이 각각 0.362, 0.200인데 그에 비하면 정확도는 성능이 낮고 F1은 그것보단 조금 나은 수준이다.
+
+여기서 알수있는 사실은 1) mean_std 쓰는것이 좋다는것과 2) wsi로 immune subtype 예측은 성능이 잘 안나온다는 점이다. 
