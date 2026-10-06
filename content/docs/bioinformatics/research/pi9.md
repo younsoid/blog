@@ -28,8 +28,15 @@ index: 1
     	- 모든 데이터가 있는 공통 환자만 사용
     * 하이퍼파라미터 최적화 안 함
 
+2. 학습·검증 설계
+  * 5-fold CV, shuffle, random_state 42
+  	- <mark>분류: StratifiedKFold</mark> / 회귀: KFold
+  	- 06·07a·08b는 슬라이드 단위 분할 → 같은 환자의 슬라이드가 train과 test에 동시에 들어갈 수 있음
+  	- 09는 환자당 슬라이드 1장 (dict에 마지막으로 들어간 슬라이드)
+  * site-aware split, 외부 검증, 암종 간 hold-out 없음
+  * 지표 계산: 분류는 fold별 계산 후 평균, 회귀는 out-of-fold 예측 전체로 계산
 
-2. Immune subtype 예측 (WSI 단독, 5-class)
+3. Immune subtype 예측 (WSI 단독, 5-class)
     * n = 947 슬라이드: C1 307 / C2 343 / C3 172 / C4 85 / C6 40
     * pooling별 (acc / macro-F1)
     	- mean_std 0.434 ± 0.028 / 0.333 ± 0.028 (최고)
