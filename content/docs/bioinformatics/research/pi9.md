@@ -3,12 +3,12 @@ date : 2026-10-06
 tags: ['2026-10']
 categories: ['연구']
 bookHidden: true
-title: "Immune label - mmc2 value"
+title: "Immune label - mmc2 immune subtype"
 bookComments: true
 index: 1
 ---
 
-# Immune label - mmc2 value
+# Immune label - mmc2 immune subtype
 
 #2026-10-06
 
