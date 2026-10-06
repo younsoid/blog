@@ -5,7 +5,7 @@ categories: ['연구']
 bookHidden: true
 title: "데이터 전처리 - Site별 라벨링"
 bookComments: true
-index: 5
+index: 6
 ---
 
 # 데이터 전처리 - Site별 라벨링
