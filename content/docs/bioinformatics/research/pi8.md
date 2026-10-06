@@ -118,8 +118,25 @@ print(f"UMAP 2D 좌표   → 병원 예측 정확도: {acc_umap.mean():.3f} ± {
 UMAP 2D 좌표   → 병원 예측 정확도: 0.862 ± 0.015
 ```
 
-게다가 슬라이드 벡터로 병원코드 맞히기를 해봤을때, 768차원 임베딩으로 병원 18곳을 맞히는 정확도가 0.957이다. (naive: 0.124) UMAP 좌표만으로도 0.862가 나온다.
+슬라이드 벡터로 병원코드 맞히기를 해봤을때, 768차원 임베딩으로 병원 18곳을 맞히는 정확도가 0.957이다. (naive: 0.124) UMAP 좌표만으로도 0.862가 나온다. 즉 EXAONEPath 1.0 임베딩에 병원 시그니처가 강하게 들어있는 것이다.
 
-즉 EXAONEPath 1.0 임베딩에 병원 시그니처가 강하게 들어있는 것이다.
+원래 목적은 이 슬라이드 벡터로 methlaytion label 기반의 immune signature(immune-rich, immune-depleted)를 맞히는것이었다. 그래서 meth label이 병원에 따라 갈리는게 아니라면 크게 문제되는것은 아니다.
 
-원래 목적은 이 슬라이드 벡터로 methlaytion label 기반의 immune signature(immune-rich, immune-poor)를 맞히는것이었다. 그래서 meth label이 병원에 따라 갈리는게 아니니까 크게 문제되는것은 아니지만 뒤에서 <line>맞히는 성능을 병원별로 테스트해볼 필요가 있을듯하다.</line> 
+실제로 methylation 라벨(immune-rich, immune-depleted)과 immune subtype(C1~C6)을 라벨링해봤을때 아래와 같이 나온다.
+
+<img width="1013" height="390" alt="image" src="https://github.com/user-attachments/assets/ce4edc6d-f413-4548-ae20-e554075b74ec" />
+
+여기서 meth label이 섬을 따라 갈렸거나 특정 병원에 immune-rich가 몰렸으면 슬라이드벡터로 meth label 맞히는데에 병원 시그니처가 크게 기여해버렸을 가능성이 있었는데, 육안으로 보기에 다행히 잘 분산되어있는것을 볼수있다. 
+
+meth label을 맞히는 성능을 병원별로 테스트해봐서 성능 변화가 없으면 확실히 "병원 시그니처가 강하게 들어있는"게 영향을 준게 아니므로, 마지막으로 그것까지 확인해본다.
+
+```plain text
+대상: 383장 (rich 163 / depleted 220), 환자 366명, 병원 27곳
+
+검증 방식                                      AUROC
+------------------------------------------------------------
+슬라이드 무작위 5-fold (기존)                   0.832 ± 0.044
+병원 단위 분할                                   0.826 ± 0.046
+```
+
+병원별로 테스트했을때와 기존 방법을 비교해보면 AUROC 변화가 -0.006으로 거의 없다. 즉 슬라이드 벡터로 meth immune label을 맞히는 성능은 병원 지문이 아니라 순수 슬라이드 내용에서 나온거라고 볼수있을것같다.
