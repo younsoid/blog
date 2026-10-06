@@ -6,6 +6,7 @@ bookHidden: true
 title: "연구 계획"
 bookComments: true
 index: 3
+pageHidden: true
 ---
 
 # 연구 계획
