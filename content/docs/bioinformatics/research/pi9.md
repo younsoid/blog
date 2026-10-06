@@ -105,8 +105,6 @@ WSI 단독 -> immune subtype 예측 (교차검증)
 
 #요약
 
-<grayblock>
-   
 1. 예측 모델
     * 공통: 슬라이드 벡터 → StandardScaler → 선형 모델 (pipeline 안에서 scaler 학습 → fold 간 정규화 누수 없음)
     * 분류 (06, 08b, 09): <mark>LogisticRegression (max_iter 1000, class_weight balanced)</mark>
@@ -138,5 +136,3 @@ WSI 단독 -> immune subtype 예측 (교차검증)
     	- attention 0.382 / 0.293
     * 기준선: 최빈 클래스(C2) 비율 0.362, 5-class 무작위 F1 ≈ 0.20
     	- 무작위보다는 높지만 아형 구분력은 제한적
-
-</grayblock>
