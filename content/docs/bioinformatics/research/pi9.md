@@ -1,16 +1,16 @@
 ---
-date : 2026-10-05
+date : 2026-10-06
 tags: ['2026-10']
 categories: ['연구']
 bookHidden: true
 title: "Immune label - mmc2 value"
 bookComments: true
-index: 5
+index: 1
 ---
 
 # Immune label - mmc2 value
 
-#2026-10-05
+#2026-10-06
 
 ---
 
