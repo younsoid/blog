@@ -1,10 +1,10 @@
 ---
 weight: 2
-title: "분석 tools"
+title: "바이오 데이터 분석"
 bookComments: false
 type: docs
 ---
 
-# 분석 tools
+# 바이오 데이터 분석
 
 ---
