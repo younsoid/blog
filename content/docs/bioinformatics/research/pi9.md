@@ -34,7 +34,7 @@ index: 1
   	- 06·07a·08b는 슬라이드 단위 분할 → 같은 환자의 슬라이드가 train과 test에 동시에 들어갈 수 있음
   	- 09는 환자당 슬라이드 1장 (dict에 마지막으로 들어간 슬라이드)
   * site-aware split, 외부 검증, 암종 간 hold-out 없음
-  * 지표 계산: 분류는 fold별 계산 후 평균, 회귀는 out-of-fold 예측 전체로 계산
+  * 지표 계산: 분류는 <mark>fold별 계산 후 평균</mark>, 회귀는 out-of-fold 예측 전체로 계산
 
 3. Immune subtype 예측 (WSI 단독, 5-class)
     * n = 947 슬라이드: C1 307 / C2 343 / C3 172 / C4 85 / C6 40
