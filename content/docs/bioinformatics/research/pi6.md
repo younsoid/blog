@@ -3,12 +3,12 @@ date : 2026-10-05
 tags: ['2026-10']
 categories: ['연구']
 bookHidden: true
-title: "데이터와 method"
+title: "데이터셋과 method"
 bookComments: true
 index: 3
 ---
 
-# 데이터와 method
+# 데이터셋과 method
 
 #2026-10-05
 
