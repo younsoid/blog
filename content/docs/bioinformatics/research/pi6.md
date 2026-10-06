@@ -24,11 +24,13 @@ index: 3
 <grayblock>
 
 - 병리 슬라이드에는 Frozen과 FFPE 2가지가 있는데 FFPE가 진단용이다. Frozen은 냉동이어서 조직모양이 찌그러지기 쉽고 FFPE는 형태가 비교적 보존되기때문에 FFPE를 쓴다.
--   유방암 진단용 슬라이드는 1,133장인데 그중에 960장을 받았고 910명 대상자였다.
+  - 유방암 진단용 슬라이드는 1,133장인데 그중에 960장을 받았고 910명 대상자였다.
 
 </grayblock>
 
-3. 라벨 1: Thorsson 2018 mmc2.xlsx (PanImmune_MS, 11,080명 × 64열)
+###
+
+3. 라벨 ①: Thorsson 2018 mmc2.xlsx (PanImmune_MS, 11,080명 × 64열)
 	- Immune Subtype C1–C6: 전체 9,126명 / BRCA 1,083명
 	- BRCA 분포: C1 369 / C2 391 / C3 191 / C4 92 / C6 40 (C5 없음)
 	- 연속형 점수 7종: LF, SF, LISS, IFN-γ, TGF-β, TIL RF, Prolif
@@ -53,6 +55,8 @@ index: 3
   - 910명 중 642명에게 메틸레이션 데이터 존재
 
 </grayblock>
+
+###
 
 6. 매칭 키: TCGA barcode 앞 3필드 (환자 단위, TCGA-XX-XXXX)
 
