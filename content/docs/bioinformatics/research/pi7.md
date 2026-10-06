@@ -78,6 +78,36 @@ index: 4
 
 ###
 
+4. 슬라이드 특징 벡터 추출
+* 1.0: EXAONEPath 1.0 ViT → 타일당 768차원, 배치 32
+	- 출력: 슬라이드별 h5 (features N×768, coords N×2)
+* 1.0 슬라이드 요약: 학습 없는 pooling 4종
+	- mean (768) / max (768) / mean_std (평균+표준편차, 1536)
+	- attention (768): 평균 벡터와의 내적을 softmax 가중치로 사용 → 평균에 가까운 타일 강조, 학습형 attention 아님
+	- 출력: brca_slide_level.h5 (960 × 차원)
+* 2.5: patch feature 768차원 → slide encoder(component = "slide") → slide_embedding 1536차원
+	- 입력: patch features, mask(전부 유효), coords, contour_index
+	- multi-omics 정렬로 학습된 genomics-aligned 표현
+	- 출력: brca_slide_level_25.h5 (pooled/encoder25, 05와 같은 구조)
+* UMAP: 타일 지도(NB 03), 슬라이드 지도(NB 05), 라벨 색칠 없음
+
+<grayblock>
+
+- 슬라이드를 타일링한후 타일을 좌표로 변환한다.
+  - 병리 이미지 사전학습 ViT(Vision Transformer) 모델인 EXAONEPath 1.0을 사용한다.
+  - 슬라이드마다 타일 수 × 768 크기의 matrix가 생성되므로 (타일수, 768) matrix 960개가 생성된다.
+- 슬라이드를 pooling 한다.
+  - (타일수, 768) 크기 matrix를 (n,) 크기 벡터로 pooling한다.
+  - mean (768) / max (768) / mean_std (1536), attention (768) 4가지로 pooling 했다.
+- 2.5를 사용하면
+  - 평균, 최댓값같은 범용적인 방법으로 요약하는게 아니라 요약 방법을 학습한 slide encoder로 pooling한다.
+  - 결과는 (1,536,) 벡터 960개이다.
+  - <line>둘다 해보는게 좋긴 하겠지만 궁극적으로는 2.5를 사용할것같긴 하다.</line>
+
+</grayblock>
+
+###
+
 <img width="680" height="524" alt="image" src="https://github.com/user-attachments/assets/69f50303-369f-4079-be53-824fc5194309" />
 
 #생각
