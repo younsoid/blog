@@ -14,13 +14,26 @@ index: 5
 
 ---
 
-<img width="680" height="524" alt="image" src="https://github.com/user-attachments/assets/7d49182c-bbeb-477a-9346-9412ad694ee9" />
-
 현재 다운받은 유방암 병리슬라이드 정보가 brca_slide_level_mean.csv로 저장돼있는데 파일을 확인해보면 통계치는 다음과 같이 나온다.
 
+```python
+df = pd.read_csv(SLIDE_CSV)
+feat_cols = [c for c in df.columns if c != "slide_id"]
+X = df[feat_cols].values.astype(np.float32)
+
+parts = df["slide_id"].str.split("-")
+df = df[["slide_id"]].copy()
+df["patient"] = parts.str[:3].str.join("-")
+df["tss"]     = parts.str[1]          # 병원 코드
+
+print("슬라이드:", X.shape, "| 환자:", df.patient.nunique(), "| 병원:", df.tss.nunique())
+print("\n슬라이드 수 상위 병원:")
+print(df.tss.value_counts().head(15).to_string())
+```
 ```plain text
 슬라이드: (960, 768) | 환자: 910 | 병원: 34
 ```
+
 960장 슬라이드에 대해서 umap을 그려보면 다음과 같이 나온다.
 
 <img width="680" height="524" alt="image" src="https://github.com/user-attachments/assets/c803d715-6448-41d8-8c8a-08160197eab4" />
