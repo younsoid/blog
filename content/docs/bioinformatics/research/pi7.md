@@ -78,7 +78,7 @@ index: 4
 
 ###
 
-<img width="801" height="530" alt="image" src="https://github.com/user-attachments/assets/86ae5265-c90c-442f-bd05-118cb7f86641" />
+<img width="680" height="524" alt="image" src="https://github.com/user-attachments/assets/69f50303-369f-4079-be53-824fc5194309" />
 
 #생각
 - 위 플롯은 슬라이드 960장에 대한 umap 그림. 데이터 포인트 하나당 (768,) 요약 벡터이다.
