@@ -3,12 +3,12 @@ date : 2026-10-06
 tags: ['2026-10']
 categories: ['연구']
 bookHidden: true
-title: "Immune subtype 예측"
+title: "WSI로 Immune subtype 예측"
 bookComments: true
 index: 1
 ---
 
-# Immune subtype 예측
+# WSI로 Immune subtype 예측
 
 #2026-10-06
 
