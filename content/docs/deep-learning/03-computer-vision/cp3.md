@@ -1,16 +1,16 @@
 ---
-date : 2026-10-06
+date : 2026-10-07
 tags: ['2026-10']
 categories: ['pretrained-model', 'feature-extraction']
 bookHidden: true
 title: "사전 훈련 모델과 특성 추출"
 bookComments: true
-index: 3
+index: 1
 ---
 
 # 사전 훈련 모델과 특성 추출
 
-#2026-10-06
+#2026-10-07
 
 ---
 
