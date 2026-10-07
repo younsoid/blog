@@ -1,10 +1,10 @@
 ---
 weight: 3
-title: "컴퓨터 비전"
+title: "트랜스포머"
 bookComments: false
 type: docs
 ---
 
-# 컴퓨터 비전
+# 트랜스포머
 
 ---
