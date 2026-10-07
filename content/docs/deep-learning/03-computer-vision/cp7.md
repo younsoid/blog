@@ -3,7 +3,7 @@ date : 2026-10-07
 tags: ['2026-10']
 categories: ['architecture']
 bookHidden: true
-title: ""
+title: "MHR(모듈화, 계층화, 추상화)와 절제 연구"
 bookComments: true
 index: 3
 ---
@@ -46,5 +46,8 @@ index: 3
 
 딥러닝 연구에서 다음 질문이 중요하다. "더 간단하게 설명할 수 없을까? 추가된 복잡성이 정말 필요할까? 그렇다면 왜 필요할까?"
 
+###
 
+#출처
 
+책 케라스 창시자에게 배우는 딥러닝
