@@ -6,6 +6,7 @@ bookHidden: true
 title: "MHR(모듈화, 계층화, 추상화)와 절제 연구"
 bookComments: true
 index: 3
+pageHidden: true
 ---
 
 # MHR(모듈화, 계층화, 추상화)와 절제 연구
