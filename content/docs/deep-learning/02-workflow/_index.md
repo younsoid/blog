@@ -1,10 +1,10 @@
 ---
 weight: 2
-title: "모델 개발과 배포"
+title: "cnn"
 bookComments: false
 type: docs
 ---
 
-# 모델 개발과 배포
+# cnn
 
 ---
