@@ -1,10 +1,10 @@
 ---
 weight: 3
-title: "컨브넷"
+title: "컴퓨터 비전"
 bookComments: false
 type: docs
 ---
 
-# 컨브넷
+# 컴퓨터 비전
 
 ---
