@@ -1,7 +1,7 @@
 ---
 date : 2026-10-06
 tags: ['2026-10']
-categories: ['paper']
+categories: ['논문']
 bookHidden: true
 title: "Paper #3 Regression-based Deep-Learning predicts molecular biomarkers from pathology slides (우리 연구랑 젤 비슷한 논문 !!)"
 bookComments: true

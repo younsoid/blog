@@ -1,9 +1,9 @@
 ---
 date : 2026-10-03
 tags: ['2026-10']
-categories: ['paper']
+categories: ['논문']
 bookHidden: true
-title: "Paper #2 Whole slide images reflect DNA methylation patterns of human tumors"
+title: "논문 #2 Whole slide images reflect DNA methylation patterns of human tumors"
 bookComments: true
 index: 2
 ---

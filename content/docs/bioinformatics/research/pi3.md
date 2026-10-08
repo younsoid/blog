@@ -1,7 +1,7 @@
 ---
 date : 2026-10-05
 tags: ['2026-10']
-categories: ['insight']
+categories: ['연구']
 bookHidden: true
 title: "메틸레이션 라벨에 대한 생각"
 bookComments: true
