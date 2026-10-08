@@ -5,7 +5,7 @@ categories: ['computer-vision']
 bookHidden: true
 title: "컴퓨터 비전 모델들"
 bookComments: true
-index: 1
+index: 4
 ---
 
 # 컴퓨터 비전 모델들
