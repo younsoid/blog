@@ -3,12 +3,12 @@ date : 2026-10-09
 tags: ['2026-10']
 categories: ['convnet']
 bookHidden: true
-title: "컨브넷 기본구조와 특성"
+title: "컨브넷의 기본구조"
 bookComments: true
 index: 2
 ---
 
-# 컨브넷
+# 컨브넷의 기본구조
 
 #2026-10-09
 
