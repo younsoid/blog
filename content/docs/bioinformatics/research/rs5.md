@@ -3,12 +3,12 @@ date : 2026-10-14
 tags: ['2026-10']
 categories: ['연구']
 bookHidden: true
-title: "연구 코호트 #4 임상 변수"
+title: "코호트 #4 TSS 기관 식별"
 bookComments: true
 index: 4
 ---
 
-# 연구 코호트 #4 임상 변수
+# 코호트 #4 TSS 기관 식별
 
 #2026-10-14
 
