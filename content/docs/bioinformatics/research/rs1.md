@@ -3,12 +3,12 @@ date : 2026-10-14
 tags: ['2026-10']
 categories: ['연구']
 bookHidden: true
-title: "연구 #1 데이터 출처, 슬라이드 종류 선택"
+title: "데이터 출처, 슬라이드 종류 선택"
 bookComments: true
 index: 1
 ---
 
-# 연구 #1 데이터 출처, 슬라이드 종류 선택
+# 데이터 출처, 슬라이드 종류 선택
 
 #2026-10-14
 
