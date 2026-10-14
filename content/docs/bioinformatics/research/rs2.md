@@ -3,12 +3,12 @@ date : 2026-10-14
 tags: ['2026-10']
 categories: ['연구']
 bookHidden: true
-title: "샘플 선택 기준"
+title: "코호트 #2 샘플 선택 기준"
 bookComments: true
 index: 2
 ---
 
-# 샘플 선택 기준
+# 코호트 #2 샘플 선택 기준
 
 #2026-10-14
 
