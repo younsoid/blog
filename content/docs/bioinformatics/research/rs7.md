@@ -5,7 +5,7 @@ categories: ['연구']
 bookHidden: true
 title: "WSI 전처리 #2 조직 Mask"
 bookComments: true
-index: 6
+index: 8
 ---
 
 # WSI 전처리 #2 조직 Mask
