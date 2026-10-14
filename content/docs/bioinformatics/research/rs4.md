@@ -3,12 +3,12 @@ date : 2026-10-14
 tags: ['2026-10']
 categories: ['연구']
 bookHidden: true
-title: "임상 변수"
+title: "코호트 #3 임상 변수"
 bookComments: true
 index: 3
 ---
 
-# 임상 변수
+# 코호트 #3 임상 변수
 
 #2026-10-14
 
