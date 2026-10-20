@@ -6,6 +6,7 @@ bookHidden: true
 title: "사전 훈련 모델의 파인 튜닝"
 bookComments: true
 index: 2
+pageHidden: true
 ---
 
 # 사전 훈련 모델의 파인 튜닝
