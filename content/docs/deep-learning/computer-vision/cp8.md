@@ -59,7 +59,9 @@ x = layers.add([x, residual])
 
 위처럼 블록 안에 max pooling이 있어서 크기가 절반이 되는 경우에는 잔차 쪽 1×1 합성곱에 strides=2를 넣어서 가로세로를 맞춘다.
 
-### 3. max pooling
+###
+
+<grayblock>
 
 max pooling은 근데 왜 하는걸까?
 
@@ -73,6 +75,8 @@ MaxPooling2D(2)는 특징 맵의 각 2×2 칸들에 대해서 가장 큰값만 �
 
 그리고 위의 Conv2D층은 stride 2인 1×1 합성곱인데, padding="same"을 해주면 입력이 가로세로 31이었을때 출력이 32가 된다. 그래서 MaxPooling2D 층에서 padding="same"을 해줘야 입력이 가로세로 31이었을때 15가 아니라 16이 나오고 1x1 2D를 사용해서 가로세로 32로 만들수가 있다.
 
+</grayblock>
+  
 ###
 
 #출처
