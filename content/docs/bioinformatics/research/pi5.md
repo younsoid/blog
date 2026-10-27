@@ -40,8 +40,6 @@ index: 3
 	- 1.0: Python 3.14 venv, torch 2.14 + CUDA 12.6, OpenSlide 4.0.1
 	- 2.5: 별도 환경(exaonepath25), Python 3.12, transformers
 
-###
-
 ### 2. 전처리
 
 * 1.0 (직접 구현)
@@ -59,8 +57,6 @@ index: 3
 	- MPP 기준 크기 보정: 0.5 µm/px 기준 256px, 예) 0.2457 MPP 슬라이드는 520px로 잘라 같은 면적
 	- MPP 정보가 없으면 0.5로 가정
 
-###
-
 ### 3. 특징 추출
 
 * 1.0: EXAONEPath 1.0 ViT → 타일당 768차원, 배치 32
@@ -75,8 +71,6 @@ index: 3
 	- 출력: brca_slide_level_25.h5 (pooled/encoder25, 05와 같은 구조)
 * UMAP: 타일 지도(NB 03), 슬라이드 지도(NB 05), 라벨 색칠 없음
 
-###
-
 ### 4. 라벨 생성
 * Immune subtype·연속형 점수: mmc2 값을 그대로 사용 (06, 07a)
 * ESTIMATE 재현 (07b)
@@ -90,8 +84,6 @@ index: 3
 	- 클러스터별 평균 LF 최고 = immune-rich, 최저 = immune-depleted, 나머지 = intermediate
 	- 라벨은 환자 개인 LF가 아니라 소속 클러스터로 결정
 	- 계획서의 consensus clustering, pseudotime, 비특이·성염색체 probe 필터, promoter/gene-level 요약은 미구현
-
-###
 
 ### 5. 예측 모델
 * 공통: 슬라이드 벡터 → StandardScaler → 선형 모델 (pipeline 안에서 scaler 학습 → fold 간 정규화 누수 없음)
@@ -108,8 +100,6 @@ index: 3
 * 하이퍼파라미터 최적화 안 함
 * 2.5 버전 (06_25 ~ 09_25): 슬라이드 벡터 경로와 pooling 이름(encoder25)만 다르고 로직 동일
 
-###
-
 ### 6. 학습·검증 설계
 * 5-fold CV, shuffle, random_state 42
 	- 분류: StratifiedKFold / 회귀: KFold
@@ -117,8 +107,6 @@ index: 3
 	- 09는 환자당 슬라이드 1장 (dict에 마지막으로 들어간 슬라이드)
 * site-aware split, 외부 검증, 암종 간 hold-out 없음
 * 지표 계산: 분류는 fold별 계산 후 평균, 회귀는 out-of-fold 예측 전체로 계산
-
-###
 
 ### 7. 평가
 
@@ -143,8 +131,6 @@ index: 3
 	- methylation: 642 / 910 환자 (70.5%)
 	- 09 공통 환자: 334명
 
-###
-
 ### 9. Immune subtype 예측 (WSI 단독, 5-class)
 * n = 947 슬라이드: C1 307 / C2 343 / C3 172 / C4 85 / C6 40
 * pooling별 (acc / macro-F1)
@@ -154,8 +140,6 @@ index: 3
 	- attention 0.382 / 0.293
 * 기준선: 최빈 클래스(C2) 비율 0.362, 5-class 무작위 F1 ≈ 0.20
 	- 무작위보다는 높지만 아형 구분력은 제한적
-
-###
 
 ### 10. 연속형 immune score 회귀 (WSI 단독)
 * 점수별 최고 Pearson r (out-of-fold)
@@ -172,15 +156,11 @@ index: 3
 	- Ridge α = 10이 768·1536차원에 비해 규제가 약해 과적합했을 가능성
 * 해석: 이미지 유래 지표(TIL RF)와 증식 지표가 상위, 전사체 신호(IFN-γ)는 형태로 잘 드러나지 않음
 
-###
-
 ### 11. ESTIMATE 재현 (RNA-seq 직접 계산)
 * RNA 확보 20 / 20명, 발현 행렬 59,427 유전자 × 20명
 * ImmuneSignature (ssGSEA NES) vs mmc2 LF: r = 0.664 (n = 19)
 	- 직접 계산 파이프라인이 기존 값과 같은 방향
 	- n이 작아 신뢰구간이 넓음 (당시 처리된 환자 75명 중 앞 20명)
-
-###
 
 ### 12. Methylation cluster와 immune 라벨
 * 642명 × 421,716 probe → QC 후 402,961 → 분산 상위 5,000
@@ -189,8 +169,6 @@ index: 3
 	- immune-rich = cluster 2 (154명), immune-depleted = cluster 0 (212명), intermediate = cluster 1 (276명)
 	- rich와 depleted의 LF 차이 약 2배
 	- 통계 검정, 아형(PAM50/ER)·purity와의 관계는 확인 안 함
-
-###
 
 ### 13. WSI로 methylation-defined immune state 예측
 * n = 383 슬라이드 (rich 163 / depleted 220), 환자 366명 → 17명은 슬라이드 2장
@@ -202,8 +180,6 @@ index: 3
 * 계획서 핵심 가설("H&E로 methylation-defined immune state 예측")을 예비적으로 지지
 	- 단, 클러스터가 면역 외 축(아형·purity)을 반영할 가능성은 미검증
 	- 환자 중복 17명은 누수 가능성이 있지만 규모는 작음
-
-###
 
 ### 14. WSI 단독 vs WSI + omics
 * n = 334 환자 (rich 135 / depleted 199), WSI = mean_std
@@ -217,8 +193,6 @@ index: 3
 	- ③의 상승(+0.021 AUROC)도 라벨 정의에 쓰인 LF가 입력에 포함되어 부분적으로 순환
 	- → 현재 결과로는 "omics 추가가 독립 정보를 더한다"고 결론 내리기 어려움
 	- ① 결과(AUROC 0.841)는 4.6과 일관됨
-
-###
 
 ### 15. 한계·다음 단계
 
