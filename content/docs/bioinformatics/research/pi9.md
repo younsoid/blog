@@ -6,6 +6,7 @@ bookHidden: true
 title: "WSI로 Immune subtype 예측"
 bookComments: true
 index: 1
+pageHidden: true
 ---
 
 # WSI로 Immune subtype 예측
