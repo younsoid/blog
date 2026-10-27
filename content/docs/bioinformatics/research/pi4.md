@@ -3,12 +3,12 @@ date : 2026-10-06
 tags: ['2026-10']
 categories: ['논문']
 bookHidden: true
-title: "논문 #3 Regression-based Deep-Learning predicts molecular biomarkers from pathology slides"
+title: "논문 Regression-based Deep-Learning predicts molecular biomarkers from pathology slides"
 bookComments: true
 index: 3
 ---
 
-# 논문 #3 Regression-based Deep-Learning predicts molecular biomarkers from pathology slides
+# 논문 Regression-based Deep-Learning predicts molecular biomarkers from pathology slides
 
 #2026-10-06
 
