@@ -3,12 +3,12 @@ date : 2026-10-19
 tags: ['2026-10']
 categories: ['연구']
 bookHidden: true
-title: "WSI 전처리"
+title: "WSI 전처리 결과"
 bookComments: true
 index: 6
 ---
 
-# WSI 전처리
+# WSI 전처리 결과
 
 #2026-10-19
 
