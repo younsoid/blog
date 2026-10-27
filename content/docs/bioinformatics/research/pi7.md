@@ -6,6 +6,7 @@ bookHidden: true
 title: "데이터 전처리"
 bookComments: true
 index: 4
+pageHidden: true
 ---
 
 # 데이터 전처리
