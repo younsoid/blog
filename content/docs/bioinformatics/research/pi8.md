@@ -6,6 +6,7 @@ bookHidden: true
 title: "데이터 전처리 - Site별 라벨링"
 bookComments: true
 index: 6
+pageHidden: true
 ---
 
 # 데이터 전처리 - Site별 라벨링
