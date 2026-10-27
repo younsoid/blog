@@ -6,6 +6,7 @@ bookHidden: true
 title: "데이터셋과 method"
 bookComments: true
 index: 3
+pageHidden: true
 ---
 
 # 데이터셋과 method
