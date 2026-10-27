@@ -3,12 +3,12 @@ date : 2026-10-05
 tags: ['2026-10']
 categories: ['연구']
 bookHidden: true
-title: "연구 계획 정리된것"
+title: "연구계획 정리 자료"
 bookComments: true
 index: 3
 ---
 
-# 연구 계획 정리된것
+# 연구계획 정리 자료
 
 #2026-10-05
 
