@@ -3,11 +3,11 @@ date : 2026-11-05
 tags: ['2026-11']
 categories: ['일상']
 bookHidden: true
-title: "평화로운겨울날"
+title: "평화"
 index: 1
 ---
 
-# 평화로운겨울날
+# 평화
 
 #2026-11-05
 
