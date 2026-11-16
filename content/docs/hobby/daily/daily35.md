@@ -5,6 +5,7 @@ categories: ['일상']
 bookHidden: true
 title: "잔잔한시간"
 index: 1
+pageHidden: true
 ---
 
 # 잔잔한시간
