@@ -19,7 +19,7 @@ index: 1
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/5a51d5f7-7894-4573-9e2b-42b4817a323b" />
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/de628653-8f2b-483b-aa06-94725f6c005c" />
 
-요며칠의 예쁜 하늘과 저녁밥들. 날씨가 청명하고 마음은 자유로운 그런 나날이다.
+요며칠의 예쁜 하늘과 저녁밥들! 날씨가 청명하고 마음은 자유로운 그런 나날이다.
 
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/ed2787b7-fa21-413b-b396-03a5e6e2f926" />
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/52c3bfdf-a882-4f9e-8c72-338c6100bd50" />
@@ -27,7 +27,7 @@ index: 1
 
 목요일 금요일에는 경주에 학회를 다녀왔는데 크게 힘들이지않고 잘 소화하고왔다.
 
-밤에는 잠이 조금 안와서 살짝 시간이 안가긴 했는데 데블스플랜 보면서 최대한 잘 보내봤구 아침에 조식존에서 커피랑 요거트 먹으면서 픽업 기다리는 시간이 호젓하고 좋았다.
+밤에는 잠이 안와서 살짝 시간이 안가긴 했는데 데블스플랜 보면서 최대한 잘 보내봤구 아침에 조식존에서 커피랑 요거트 먹으면서 픽업 기다리는 시간이 호젓하고 좋았다.
 
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/dc7fcec5-4bea-4645-bd4b-55ae6346119e" />
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/4a39233e-3e9f-4950-915f-267ba667d823" />
@@ -38,14 +38,12 @@ index: 1
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/dc08088d-3999-4bd2-8571-56199c67250f" />
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/f51d3ae1-bf20-48a9-9cdc-8b9fc85e577e" />
 
-저녁먹으러가기전에 호수가 예뻐서 사진도 찍구
-
-저녁으로는 전현무계획 맛집인 산해라는 식당을 갔는데 엄마아빠가 다 맛있다고 해줘서 기분이 좋았다 ㅎㅎ
+저녁먹으러가기전에 호수가 예뻐서 사진도 찍고 저녁으로는 전현무계획 맛집인 산해라는 식당을 갔는데 엄마아빠가 다 맛있다고 해줘서 기분이 좋았다 ㅎㅎ
 
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/5cbae2c1-3073-4ace-80ac-60312f775abc" />
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/9b04b91e-7017-4f1b-bf46-f45793bff71d" />
 
-다음날 아침엔 페이스포포를 가서 브런치를 먹었구
+다음날 아침엔 페이스포포를 가서 브런치를 먹었고
 
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/f98c5456-ab62-4fcf-9e02-a05a75bfb3af" />
 
@@ -59,7 +57,6 @@ index: 1
 
 선선한 와중에 앉아서 떡볶이랑 순대 사먹었는데 그것두 넘 맛있었다 ㅎㅎ
 
-<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/c5407926-f87b-4c38-867e-521df1d33086" />
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/027e4538-1e61-46fd-82ab-00d3e3c1cbf6" />
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/eb669ef3-1f72-4530-be99-04c9d5a06f22" />
 
