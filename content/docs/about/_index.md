@@ -4,6 +4,7 @@ bookFlatSection: true
 bookComments: false
 title: "ᴀʙᴏᴜᴛ"
 tagHidden: true
+pageHidden: true
 ---
 
 #
