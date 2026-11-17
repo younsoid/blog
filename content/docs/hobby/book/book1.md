@@ -4,6 +4,7 @@ tags: ['2026-08']
 categories: ['포닝']
 bookHidden: true
 title: "현실과 감각"
+pageHidden: true
 ---
 
 # 현실과 감각
