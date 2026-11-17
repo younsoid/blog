@@ -4,6 +4,7 @@ tags: ['2026-07']
 categories: ['불안한완벽주의자를위한책']
 bookHidden: true
 title: "나는 어떤 사람인가"
+pageHidden: true
 ---
 
 # 나는 어떤 사람인가
