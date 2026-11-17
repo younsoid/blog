@@ -36,6 +36,8 @@ title: "불완전함을 마주하는법"
 
 세상과 나를 잘 이해하고싶다 그로써 마음속 혼란을 줄이고 싶다. 명확하다는 착각에서 벗어나 명확하지 않음을 이해하고 불명확함을 잘 인지하고싶다.
 
+###
+
 <img width="1660" height="1922" alt="image" src="https://github.com/user-attachments/assets/e4109107-df31-4ea2-ac26-d9582bb6f1c0" />
 
 ###
