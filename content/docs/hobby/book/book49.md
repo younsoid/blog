@@ -5,6 +5,7 @@ categories: ['불행앞에노래부르리']
 bookHidden: true
 title: "승인"
 index: 2
+pageHidden: true
 ---
 
 # 승인
