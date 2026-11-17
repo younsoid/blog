@@ -5,6 +5,7 @@ categories: ['슬픔의위안']
 bookHidden: true
 title: "사소한 것들"
 index: 1
+pageHidden: true
 ---
 
 # 사소하고 끔찍한 것들
