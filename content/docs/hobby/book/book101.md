@@ -5,6 +5,7 @@ categories: ['정신나간세상에서아픈사람들']
 bookHidden: true
 title: "신경계를 조율하기"
 index: 2
+pageHidden: true
 ---
 
 # 신경계를 조율하기
