@@ -3,11 +3,11 @@ date : 2026-11-05
 tags: ['2026-11']
 categories: ['일상']
 bookHidden: true
-title: "따뜻한밥"
+title: "따뜻한밥한끼"
 index: 1
 ---
 
-# 따뜻한밥
+# 따뜻한밥한끼
 
 #2026-11-05
 
