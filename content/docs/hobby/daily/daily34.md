@@ -3,11 +3,11 @@ date : 2026-11-05
 tags: ['2026-11']
 categories: ['일상']
 bookHidden: true
-title: "그냥밥먹은기록"
+title: "식사"
 index: 1
 ---
 
-# 그냥밥먹은기록
+# 식사
 
 #2026-11-05
 
