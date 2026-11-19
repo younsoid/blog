@@ -4,7 +4,6 @@ tags: ['2026-08']
 categories: ['생각']
 bookHidden: true
 title: "피겜"
-pageHidden: true
 ---
 
 # 피겜
