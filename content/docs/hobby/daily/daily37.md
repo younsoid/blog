@@ -26,8 +26,6 @@ index: 1
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/a409b7f9-adcd-47c0-9a99-56eaeaff6934" />
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/f2ab4666-a38d-481e-a955-4e70696ceb15" />
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/1f6ba1de-8997-420e-9c18-1f1c159fd33f" />
-<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/1d4b636f-c813-483d-994c-2a3bf9820f55" />
-<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/77f8789f-a752-4611-94c4-a9d554a80ac5" />
 
 주중에는 할일들을 열심히 쳐냈구 틈틈이 데블스플랜보면서 행복한 시간을 보냈다. 
 
