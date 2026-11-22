@@ -1,15 +1,15 @@
 ---
-date : 2026-11-18
+date : 2026-11-22
 tags: ['2026-11']
 categories: ['일상']
 bookHidden: true
-title: "오늘의기대되는일"
+title: "휴식"
 index: 1
 ---
 
-# 오늘의기대되는일
+# 휴식
 
-#2026-11-18
+#2026-11-22
 
 ---
 
@@ -18,7 +18,18 @@ index: 1
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/de045273-7092-4464-bd4d-1a4356270a73" />
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/78dac7f3-545f-4a89-a081-daa1a37839f3" />
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/6af354c5-a79e-4a46-92cd-6a27c5cb69c7" />
+<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/0a846f8a-fbd6-44bc-9dd0-6b63c99bd55b" />
+<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/7601a569-f3d8-4c01-9513-adde43c75e09" />
+<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/2713113d-5948-4279-8658-a194fd9d9e4f" />
+<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/bcd21ae4-baad-4026-85ee-8fd4c2122d27" />
+<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/3fa28df7-1bb3-4891-a6d3-db8654c2c09b" />
+<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/20b7896c-5dca-4759-a8d1-f07cc29a550a" />
+<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/a409b7f9-adcd-47c0-9a99-56eaeaff6934" />
+<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/f2ab4666-a38d-481e-a955-4e70696ceb15" />
+<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/1f6ba1de-8997-420e-9c18-1f1c159fd33f" />
+<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/1d4b636f-c813-483d-994c-2a3bf9820f55" />
+<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/77f8789f-a752-4611-94c4-a9d554a80ac5" />
 
-이번주는 뭔가 정신없이 지나갔는데... 기분이 막 좋진 않은 주였던것같다. 뭔가 허전한느낌.
+주중에는 할일들을 열심히 쳐냈구 틈틈이 데블스플랜보면서 행복한 시간을 보냈다. 
 
-그래서 약간 변화를 주기 위해 오랜만에 와인을 사올까한다. 점심에는 나가서 커피를 사 마시고, 집오는길에 킴스클럽을 들러서 와인을 살것이다. 그리고 치아바타를 사와서 집에있는 카레랑 먹을것이다.
+토요일에는 상담갔다가 눈썹문신받고 집에와서 이번주내내 맛있게 먹었던 치폴레샌드위치를 먹었다. 일요일엔 내내 먹고자고를 반복하면서 푹 쉬었다. 오늘부터 다시 일상을 건강하게 살아볼것이다!
