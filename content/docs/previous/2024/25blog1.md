@@ -23,4 +23,3 @@ index: 1
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/495f1bc2-5b14-4a5f-a27b-d8431f31b08c" />
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/643c8c8a-a704-488b-a8bd-01a8c1d4aebc" />
 <img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/c458faaf-a1a4-4c95-aa20-1ef84a35ef9f" />
-<img width="1280" height="1706" alt="image" src="https://github.com/user-attachments/assets/35ce3a47-68ef-4fc1-b31e-f57330a465e7" />
