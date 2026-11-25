@@ -5,6 +5,7 @@ categories: ['일상']
 bookHidden: true
 title: "하늘이예쁜일상"
 index: 1
+pageHidden: true
 ---
 
 # 하늘이예쁜일상
